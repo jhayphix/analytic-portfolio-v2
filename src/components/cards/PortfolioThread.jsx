@@ -16,7 +16,6 @@ import ProjectCard from "@components/cards/ProjectCard";
 */
 const PortfolioThread = () => {
   const { filteredProjects } = useContext(ProjectContext);
-  console.log(filteredProjects);
 
   /*
     |----------------------------------------
@@ -25,11 +24,13 @@ const PortfolioThread = () => {
   */
   return (
     <div className="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 justify-content-sm-start justify-content-center my-5">
-      {filteredProjects?.map((project, index) => (
-        <div className="col-sm-6 col-11" key={index}>
-          <ProjectCard project={project} />
-        </div>
-      ))}
+      {filteredProjects.length > 0
+        ? filteredProjects?.map((project, index) => (
+            <div className="col-sm-6 col-11" key={index}>
+              <ProjectCard project={project} />
+            </div>
+          ))
+        : "No Project Available"}
     </div>
   );
 };

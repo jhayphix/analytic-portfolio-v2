@@ -81,6 +81,14 @@
   | Lookup Styles
   |----------------------------------------
 */
+
+/* Container */
+.__block {
+  padding: 10px 10px;
+  border-radius: 10px;
+  background-color: var(--bg_primary_5);
+}
+
 /* Para */
 .__para {
   margin-left: var(--para);

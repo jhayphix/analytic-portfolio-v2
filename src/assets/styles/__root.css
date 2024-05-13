@@ -10,10 +10,10 @@
   /* rgba(32,32,32) , rgba(18,18,18), rgba(29,33,37) */
   /* Primary colors */
   --bg_primary_1: rgba(13, 13, 13);
-  --bg_primary_2: rgba(18, 18, 18);
-  --bg_primary_3: rgba(32, 32, 32);
-  --bg_primary_4: rgba(29, 33, 37);
-  --bg_primary_5: rgba(29, 33, 37);
+  --bg_primary_2: rgba(18, 18, 18); /* Footer navigation | About section*/
+  --bg_primary_3: rgba(32, 32, 32); /* Contact info header */
+  --bg_primary_4: rgba(29, 33, 37); /* Stat section */
+  --bg_primary_5: rgba(29, 33, 37); /* Tabs */
   --bg_primary_6: var(--bg_primary_2);
 
   /* Accent colors */
@@ -53,8 +53,7 @@
   --text_accent_2: #2f449d;
 
   /* Secondary color */
-  --text_secondary_1: var(--white_color);
-  --text_secondary_1: red;
+  --text_secondary_1: rgba(255, 255, 255, 0.8);
   --text_muted_1: #959cb1;
 
   /* Unchanged */

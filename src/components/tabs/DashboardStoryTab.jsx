@@ -23,7 +23,6 @@ const DashboardStoryTab = ({ setCategory }) => {
     setActiveTab(index);
     setCategory(category);
   };
-
   /*
   |----------------------------------------
   | Return

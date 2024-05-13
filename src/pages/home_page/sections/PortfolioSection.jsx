@@ -35,7 +35,7 @@ const PortfolioSection = ({ showHeader }) => {
         {showHeader ? (
           <SectionHeader title={sectionTitle} subTitle={sectionSubTitle} />
         ) : (
-          <SectionSubText subText="Have a glance at some of my recent projects" />
+          <SectionSubText subText={sectionSubTitle} />
         )}
         <ProjectNavTab />
         <PortfolioThread />
