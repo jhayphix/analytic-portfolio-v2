@@ -7,14 +7,13 @@
   | Background
   |----------------------------------------
   */
-  /* rgba(32,32,32) , rgba(18,18,18), rgba(29,33,37) */
   /* Primary colors */
-  --bg_primary_1: rgba(13, 13, 13);
-  --bg_primary_2: rgba(18, 18, 18);
-  --bg_primary_3: rgba(32, 32, 32);
-  --bg_primary_4: rgba(29, 33, 37);
-  --bg_primary_5: rgba(29, 33, 37);
-  --bg_primary_6: var(--bg_primary_2);
+  --bg_primary_1: #0a0e32;
+  --bg_primary_2: #0c1138;
+  --bg_primary_3: #0d133b;
+  --bg_primary_4: #131a4a;
+  --bg_primary_5: #1e2242;
+  --bg_primary_6: #252d4d;
 
   /* Accent colors */
   --bg_accent_1: #4a6cf7;
@@ -54,7 +53,6 @@
 
   /* Secondary color */
   --text_secondary_1: var(--white_color);
-  --text_secondary_1: red;
   --text_muted_1: #959cb1;
 
   /* Unchanged */
