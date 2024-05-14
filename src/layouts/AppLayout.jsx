@@ -2,14 +2,14 @@
 import { useContext, useEffect, useState } from "react";
 
 // ... Context
-import { ThemeContext } from "../contexts/ThemeContextProvider";
+import { ThemeContext } from "@contexts/ThemeContextProvider";
 
 // ... Components
 import Footer from "@layouts/Footer";
 import Navigation from "@layouts/Navigation";
+import MobileNav from "@layouts/MobileNav";
 import BackToTopButton from "@components/buttons/BackToTopButton";
 import ChatOnWhatsappButton from "@components/buttons/ChatOnWhatsappButton";
-import MobileNav from "./MobileNav";
 
 // ... Assets
 
