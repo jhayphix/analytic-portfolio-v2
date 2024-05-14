@@ -26,7 +26,7 @@ const ChatOnWhatsappButton = () => {
         href="https://wa.me/233248359918?text=Hello Jhay, I need your service!!"
         target="_blank"
         rel="noreferrer"
-        className="chat_on_whatsapp"
+        className="chat_on_whatsapp d-sm-flex d-none"
       >
         <FaWhatsapp className="chat_on_whatsapp_icon" />
       </a>
