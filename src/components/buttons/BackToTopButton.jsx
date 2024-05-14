@@ -33,7 +33,7 @@ const BackToTopButton = () => {
   return (
     <div
       role="button"
-      className="back_to_top d-flex align-items-center justify-content-center"
+      className="back_to_top d-sm-flex d-none align-items-center justify-content-center"
       onClick={scrollToTop}
     >
       <BsArrowUpShort size={30} className="back_to_top_icon" />

@@ -1,4 +1,4 @@
-import { FaHome, FaBriefcase, FaPhone } from "react-icons/fa";
+import { FaHome, FaBriefcase, FaEnvelope } from "react-icons/fa";
 
 /*
   |----------------------------------------
@@ -82,7 +82,7 @@ export const mobile_navigation_db = {
     {
       name: "Contact",
       path: `${base_route}/contact`,
-      icon: <FaPhone size={mobile_icon_size} />,
+      icon: <FaEnvelope size={mobile_icon_size} />,
       end: false,
     },
   ],

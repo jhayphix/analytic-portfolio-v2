@@ -29,7 +29,7 @@
   justify-content: center;
   color: #fff;
   transition: all ease-in-out 0.3s;
-  cursor: pointer;
+  border: 3px solid green;
 }
 
 .mobile_nav_btn_container .mobile_nav_active {
