@@ -47,6 +47,15 @@
   border: 2px solid red;
 } */
 
+/* Mobile navigation */
+#mobile_nav .mobile_nav_active {
+  color: var(--text_accent_1);
+}
+
+#mobile_nav .mobile_nav_name {
+  font-size: 12px;
+}
+
 /* 
 |------------------------------------------------
 | Small screen only

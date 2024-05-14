@@ -1,11 +1,10 @@
-.mobile_nav_btn_container {
+/* .mobile_nav_btn_container {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
 
   display: flex;
-  /* background-color: rgb(27, 133, 219); */
   background-color: var(--bg_accent_1);
   width: 100vw;
   height: 40px;
@@ -34,4 +33,4 @@
 
 .mobile_nav_btn_container .mobile_nav_active {
   color: black;
-}
+} */

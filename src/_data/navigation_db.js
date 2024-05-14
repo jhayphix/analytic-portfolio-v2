@@ -68,16 +68,16 @@ export const mobile_navigation_db = {
   base_route: base_route,
   nav_links: [
     {
-      name: "Home",
-      path: `${base_route}/`,
-      icon: <FaHome size={mobile_icon_size} />,
-      end: true,
-    },
-    {
       name: "Portfolio",
       path: `${base_route}/portfolio`,
       icon: <FaBriefcase size={mobile_icon_size} />,
       end: false,
+    },
+    {
+      name: "Home",
+      path: `${base_route}/`,
+      icon: <FaHome size={mobile_icon_size} />,
+      end: true,
     },
     {
       name: "Contact",
