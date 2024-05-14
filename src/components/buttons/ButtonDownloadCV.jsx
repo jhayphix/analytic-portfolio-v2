@@ -1,10 +1,17 @@
+// Modules
+import { useContext } from "react";
+
+// Context
+import { NavigationContext } from "@contexts/NavigationContextProvider";
+
+// Components
 import ButtonStar from "@components/buttons/ButtonStar.jsx";
 
 const ButtonDownloadCV = () => {
-  const cv_path = "/doc/resume.pdf";
+  const { base_route } = useContext(NavigationContext);
+  const cv_path = `/${base_route}/doc/resume.pdf`;
 
   const handleDownloadClick = () => {
-    console.log("Clicked");
     window.open(cv_path, "_blank");
   };
 
