@@ -16,7 +16,7 @@ export const navigation_db = {
       end: true,
     },
     {
-      name: "Portfolio",
+      name: "Projects",
       path: `${base_route}/portfolio`,
       end: false,
     },
@@ -46,7 +46,7 @@ export const navigation_db = {
     path: `/${base_route}/about`,
   },
   portfolio: {
-    name: "Portfolio",
+    name: "Projects",
     path: `/${base_route}/portfolio`,
   },
   dashboard: {
@@ -68,7 +68,7 @@ export const mobile_navigation_db = {
   base_route: base_route,
   nav_links: [
     {
-      name: "Portfolio",
+      name: "Projects",
       path: `${base_route}/portfolio`,
       icon: <FaBriefcase size={mobile_icon_size} />,
       end: false,
