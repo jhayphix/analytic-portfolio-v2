@@ -1,7 +1,7 @@
 {
   "name": "react-base-app",
   "version": "0.1.0",
-  "homepage": "https://jhayphix.github.io/analytic-portfolio-v2",
+  "homepage": "https://jhayphix.github.io/analytic-portfolio",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
