@@ -1,7 +1,7 @@
-const ThemeSwitch = ({ onChange, theme }) => {
+const ThemeSwitch = ({ onChange, theme, containerClass }) => {
   return (
     <>
-      <label className="theme-switch">
+      <label className={`theme-switch ${containerClass}`}>
         <input
           type="checkbox"
           className="theme-switch__checkbox"

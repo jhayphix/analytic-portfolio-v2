@@ -1,3 +1,5 @@
+import { FaHome, FaBriefcase, FaPhone } from "react-icons/fa";
+
 /*
   |----------------------------------------
   | Navigation
@@ -54,6 +56,44 @@ export const navigation_db = {
   service: {
     name: "Services",
     path: `/${base_route}/services`,
+  },
+  contact: {
+    name: "Contact",
+    path: `/${base_route}/contact`,
+  },
+};
+
+const mobile_icon_size = 20;
+export const mobile_navigation_db = {
+  base_route: base_route,
+  nav_links: [
+    {
+      name: "Home",
+      path: `${base_route}/`,
+      icon: <FaHome size={mobile_icon_size} />,
+      end: true,
+    },
+    {
+      name: "Portfolio",
+      path: `${base_route}/portfolio`,
+      icon: <FaBriefcase size={mobile_icon_size} />,
+      end: false,
+    },
+    {
+      name: "Contact",
+      path: `${base_route}/contact`,
+      icon: <FaPhone size={mobile_icon_size} />,
+      end: false,
+    },
+  ],
+
+  home: {
+    name: "Home",
+    path: `/${base_route}/`,
+  },
+  portfolio: {
+    name: "Portfolio",
+    path: `/${base_route}/portfolio`,
   },
   contact: {
     name: "Contact",

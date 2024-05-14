@@ -7,6 +7,7 @@ import { createContext } from "react";
 
 // ... Assets
 import { navigation_db } from "@data/navigation_db";
+import { mobile_navigation_db } from "@data/navigation_db";
 
 /*
 |----------------------------------------------------------------------------
@@ -15,6 +16,7 @@ import { navigation_db } from "@data/navigation_db";
 */
 export const NavigationContext = createContext({
   nav_links: [],
+  mobile_nav_links: [],
   base_route: "",
 
   home: {},
@@ -35,6 +37,7 @@ const NavigationContextProvider = ({ children }) => {
   */
   const base_route = navigation_db?.base_route;
   const nav_links = navigation_db?.nav_links;
+  const mobile_nav_links = mobile_navigation_db?.nav_links;
 
   const home = navigation_db?.home;
   const about = navigation_db?.about;
@@ -60,6 +63,7 @@ const NavigationContextProvider = ({ children }) => {
   */
   const context = {
     nav_links,
+    mobile_nav_links,
     base_route,
     home,
     about,

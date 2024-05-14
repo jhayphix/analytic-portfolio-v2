@@ -9,6 +9,7 @@ import Footer from "@layouts/Footer";
 import Navigation from "@layouts/Navigation";
 import BackToTopButton from "@components/buttons/BackToTopButton";
 import ChatOnWhatsappButton from "@components/buttons/ChatOnWhatsappButton";
+import MobileNav from "./MobileNav";
 
 // ... Assets
 
@@ -66,6 +67,7 @@ const AppLayout = ({ children }) => {
       {children}
       {showBackToTop && <BackToTopButton />}
       {showChatOnWhatsapp && <ChatOnWhatsappButton />}
+      <MobileNav />
       <Footer />
     </div>
   );

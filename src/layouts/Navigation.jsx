@@ -82,8 +82,12 @@ const Navigation = () => {
         </Link>
 
         {/* ------------------------------------------------------------------------ */}
-        {/* Section 3: Theme Switch on mobile*/}
-
+        {/* Display on mobile screen */}
+        <ThemeSwitch
+          onChange={switchTheme}
+          theme={theme}
+          containerClass={`d-inline-block d-${nav_expands_at}-none`}
+        />
         {/* <div
           className={`navbar-theme-switch navbar_theme_switch d-inline-block d-${nav_expands_at}-none`}
         >
@@ -155,8 +159,12 @@ const Navigation = () => {
         </div>
 
         {/* ------------------------------------------------------------------------ */}
-        {/* Section 3: Theme Switch */}
-        <ThemeSwitch onChange={switchTheme} theme={theme} />
+        {/* Display on large screen */}
+        <ThemeSwitch
+          onChange={switchTheme}
+          theme={theme}
+          containerClass={`d-none d-${nav_expands_at}-inline-block`}
+        />
         {/* <div
           className={`navbar-theme-switch navbar_theme_switch d-none d-${nav_expands_at}-inline-block`}
         >
