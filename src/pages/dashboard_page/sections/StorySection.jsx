@@ -30,7 +30,7 @@ const StorySection = ({ project_story, story_tab }) => {
     <div className="story_section">
       <ProjectStoryTab story_tab={story_tab} setCategory={setCategory} />
       <div className="row justify-content-center">
-        <div className="__story_container col-8">
+        <div className="__story_container col-md-8 col-12">
           {story_info ? (
             story_info?.map((story, index) => {
               return story?.type === "list" ? (
