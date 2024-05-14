@@ -28,7 +28,7 @@ Link {
 body {
   background-color: var(--bg_primary_1);
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 
 /* width */

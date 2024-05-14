@@ -15,6 +15,8 @@ import {
 import AutoWriteText from "@components/config/AutoWriteText";
 import HandHoldPenSvg from "@components/svg_icons/HandHoldPenSvg";
 
+import ButtonDownloadCV from "@components/buttons/ButtonDownloadCV";
+
 // ... Assets
 
 /*
@@ -99,13 +101,7 @@ const HeroSection = () => {
               Learn More
             </Link>
 
-            <Link
-              to=""
-              className="btn btn-lg btn_unchanged_primary"
-              role="button"
-            >
-              Download CV
-            </Link>
+            <ButtonDownloadCV />
           </div>
         </div>
       </div>
