@@ -15,6 +15,7 @@ import "@assets/styles/theme.css";
 import "@assets/styles/brand.css";
 import "@assets/styles/__root.css";
 import "@assets/styles/app_layout.css";
+import "@assets/styles/themeswitch.css";
 
 import "@pages/home_page/sections/hero_section.css";
 import "@pages/home_page/sections/about_section.css";

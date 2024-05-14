@@ -1,7 +1,7 @@
 // ... React modules
 import { NavLink, Link } from "react-router-dom";
 import { useContext, useState, useEffect } from "react";
-import { BsMoonFill, BsSun } from "react-icons/bs";
+// import { BsMoonFill, BsSun } from "react-icons/bs";
 import { FaWrench, FaBars } from "react-icons/fa";
 
 // ... Context
@@ -9,6 +9,7 @@ import { ThemeContext } from "@contexts/ThemeContextProvider";
 import { NavigationContext } from "@contexts/NavigationContextProvider";
 
 // ... Components
+import ThemeSwitch from "./ThemeSwitch";
 
 // ... Assets
 
@@ -81,9 +82,10 @@ const Navigation = () => {
         </Link>
 
         {/* ------------------------------------------------------------------------ */}
-        {/* Section 3: Theme Switch */}
-        <div
-          className={`navbar-theme-switch d-inline-block d-${nav_expands_at}-none`}
+        {/* Section 3: Theme Switch on mobile*/}
+
+        {/* <div
+          className={`navbar-theme-switch navbar_theme_switch d-inline-block d-${nav_expands_at}-none`}
         >
           <div className="form-check form-switch">
             <input
@@ -94,7 +96,7 @@ const Navigation = () => {
               onChange={switchTheme}
             />
             <label
-              className="form-check-label cursor_pointer"
+              className="form-check-label form_check_label cursor_pointer"
               htmlFor="themeSwitch"
             >
               {theme !== "dark" ? (
@@ -104,7 +106,7 @@ const Navigation = () => {
               )}
             </label>
           </div>
-        </div>
+        </div> */}
 
         {/* ------------------------------------------------------------------------ */}
         {/* Section 2: Navigation Links */}
@@ -154,8 +156,9 @@ const Navigation = () => {
 
         {/* ------------------------------------------------------------------------ */}
         {/* Section 3: Theme Switch */}
-        <div
-          className={`navbar-theme-switch d-none d-${nav_expands_at}-inline-block`}
+        <ThemeSwitch onChange={switchTheme} theme={theme} />
+        {/* <div
+          className={`navbar-theme-switch navbar_theme_switch d-none d-${nav_expands_at}-inline-block`}
         >
           <div className="form-check form-switch">
             <input
@@ -166,7 +169,7 @@ const Navigation = () => {
               onChange={switchTheme}
             />
             <label
-              className="form-check-label cursor_pointer"
+              className="form-check-label form_check_label cursor_pointer"
               htmlFor="themeSwitch"
             >
               {theme !== "dark" ? (
@@ -176,7 +179,7 @@ const Navigation = () => {
               )}
             </label>
           </div>
-        </div>
+        </div> */}
       </div>
     </nav>
   );

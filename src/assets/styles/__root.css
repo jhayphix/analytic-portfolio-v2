@@ -16,6 +16,8 @@
   --bg_primary_5: rgba(29, 33, 37); /* Tabs */
   --bg_primary_6: var(--bg_primary_2);
 
+  --bg_box_shadow: rgba(255, 255, 255, 0.2);
+
   /* Accent colors */
   --bg_accent_1: #4a6cf7;
   --bg_accent_2: #2f449d;
@@ -124,6 +126,8 @@
   --bg_primary_4: #e5eafc;
   --bg_primary_5: #e5eafc;
   --bg_primary_6: #ffffff;
+
+  --bg_box_shadow: rgba(0, 0, 0, 0.2);
 
   /* dark color */
   --bg_secondary_1: #0a0e32;
