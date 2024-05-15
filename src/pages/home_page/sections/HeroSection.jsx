@@ -1,5 +1,6 @@
 // ... React modules
 import { Link } from "react-router-dom";
+import { useContext } from "react";
 import {
   FaWhatsapp,
   FaTwitter,
@@ -10,12 +11,14 @@ import {
 // import { FaWrench, FaHandPaper, FaPencilAlt } from "react-icons/fa";
 
 // ... Context
+import { NavigationContext } from "@contexts/NavigationContextProvider.jsx";
 
 // ... Components
 import AutoWriteText from "@components/config/AutoWriteText";
 import HandHoldPenSvg from "@components/svg_icons/HandHoldPenSvg";
 
 import ButtonDownloadCV from "@components/buttons/ButtonDownloadCV";
+import ButtonSpace from "@components/buttons/ButtonSpace";
 
 // ... Assets
 
@@ -25,6 +28,11 @@ import ButtonDownloadCV from "@components/buttons/ButtonDownloadCV";
   |----------------------------------------------------------------------------
 */
 const HeroSection = () => {
+  const { portfolio } = useContext(NavigationContext);
+
+  const portfolio_path = portfolio?.path;
+  console.log(portfolio_path);
+
   /*
     |----------------------------------------
     | Return
@@ -96,9 +104,9 @@ const HeroSection = () => {
           </div>
 
           {/* Action buttons */}
-          <div className="hero_btn_container">
-            <Link to="" className="btn btn-lg btn_accent_1 me-2" role="button">
-              Learn More
+          <div className="hero_btn_container d-flex align-items-center justify-content-center">
+            <Link to="" className="me-4">
+              <ButtonSpace btn_text="Explore" />
             </Link>
 
             <ButtonDownloadCV />

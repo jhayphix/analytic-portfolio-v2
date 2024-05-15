@@ -1,8 +1,12 @@
 import SVGStar from "@components/svg_icons/SVGStar";
 
-const ButtonStar = ({ btn_text, onClick }) => {
+const ButtonStar = ({ btn_text, onClick, className }) => {
   return (
-    <button id="button_star" className="custom-button" onClick={onClick}>
+    <button
+      id="button_star"
+      className={`${className} custom-button`}
+      onClick={onClick}
+    >
       {btn_text}
       <div className="star-1">
         <SVGStar />
