@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/analytic-portfolio/static/css/main.62220e45.css",
-    "main.js": "/analytic-portfolio/static/js/main.643a483d.js",
+    "main.css": "/analytic-portfolio/static/css/main.54a11799.css",
+    "main.js": "/analytic-portfolio/static/js/main.b8301767.js",
     "static/media/dashboard_img_1.png": "/analytic-portfolio/static/media/dashboard_img_1.7dab26df22b514386cfa.png",
     "static/media/dashboard_img_2.png": "/analytic-portfolio/static/media/dashboard_img_2.02e96f656d69ac42361e.png",
     "static/media/ex_bike_sales_08_01_img.png": "/analytic-portfolio/static/media/ex_bike_sales_08_01_img.8c04c77ea96bd9622177.png",
@@ -30,11 +30,11 @@
     "static/media/checkmark_icon.svg": "/analytic-portfolio/static/media/checkmark_icon.8a436541ee92f58bd1f505dc22b8e633.svg",
     "static/media/service_icon_5.svg": "/analytic-portfolio/static/media/service_icon_5.70a90f26af97e2f7754294bbcc5e696c.svg",
     "index.html": "/analytic-portfolio/index.html",
-    "main.62220e45.css.map": "/analytic-portfolio/static/css/main.62220e45.css.map",
-    "main.643a483d.js.map": "/analytic-portfolio/static/js/main.643a483d.js.map"
+    "main.54a11799.css.map": "/analytic-portfolio/static/css/main.54a11799.css.map",
+    "main.b8301767.js.map": "/analytic-portfolio/static/js/main.b8301767.js.map"
   },
   "entrypoints": [
-    "static/css/main.62220e45.css",
-    "static/js/main.643a483d.js"
+    "static/css/main.54a11799.css",
+    "static/js/main.b8301767.js"
   ]
 }
