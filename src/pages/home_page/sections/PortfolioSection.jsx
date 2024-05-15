@@ -28,7 +28,7 @@ const PortfolioSection = ({ showHeader }) => {
   const sectionSubTitle = "Have a glance at some of my recent projects";
   return (
     <section
-      id="my-portfolio-section"
+      id="portfolio-section"
       className="bg_primary_1 py-5 bg_shape_grp_3"
     >
       <div className="container-lg">

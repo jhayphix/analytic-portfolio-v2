@@ -7,6 +7,9 @@
   overflow: hidden;
   padding: 12px 35px;
   background-size: 300% 300%;
+  /* backdrop-filter: blur(1rem); */
+  backdrop-filter: blur(1rem); /* Default value */
+  -webkit-backdrop-filter: blur(1rem); /* Vendor prefix for WebKit browsers */
   backdrop-filter: blur(1rem);
   border-radius: 10px;
   transition: 0.5s;
@@ -175,11 +178,12 @@
   }
 }
 
-@media only screen and (max-width: 600px) {
+/* @media only screen and (max-width: 600px) {
   #button_space {
     overflow: hidden;
+    max-height: 200px;
   }
   #button_space:hover {
     transform: none;
   }
-}
+} */

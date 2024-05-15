@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { NavigationContext } from "@contexts/NavigationContextProvider";
 
 // Components
-import ButtonStar from "@components/buttons/ButtonStar.jsx";
+import ButtonDocument from "@components/buttons/ButtonDocument";
 
 const ButtonDownloadCV = () => {
   const { base_route } = useContext(NavigationContext);
@@ -15,7 +15,9 @@ const ButtonDownloadCV = () => {
     window.open(cv_path, "_blank");
   };
 
-  return <ButtonStar onClick={handleDownloadClick} btn_text="Download Cv" />;
+  return (
+    <ButtonDocument onClick={handleDownloadClick} btn_text="Download Cv" />
+  );
 };
 
 export default ButtonDownloadCV;

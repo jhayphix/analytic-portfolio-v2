@@ -1,6 +1,6 @@
 // ... React modules
-import { Link } from "react-router-dom";
-import { useContext } from "react";
+// import { Link } from "react-router-dom";
+// import { useContext } from "react";
 import {
   FaWhatsapp,
   FaTwitter,
@@ -11,14 +11,13 @@ import {
 // import { FaWrench, FaHandPaper, FaPencilAlt } from "react-icons/fa";
 
 // ... Context
-import { NavigationContext } from "@contexts/NavigationContextProvider.jsx";
 
 // ... Components
 import AutoWriteText from "@components/config/AutoWriteText";
 import HandHoldPenSvg from "@components/svg_icons/HandHoldPenSvg";
 
 import ButtonDownloadCV from "@components/buttons/ButtonDownloadCV";
-import ButtonSpace from "@components/buttons/ButtonSpace";
+import ButtonStar from "@components/buttons/ButtonStar";
 
 // ... Assets
 
@@ -28,11 +27,6 @@ import ButtonSpace from "@components/buttons/ButtonSpace";
   |----------------------------------------------------------------------------
 */
 const HeroSection = () => {
-  const { portfolio } = useContext(NavigationContext);
-
-  const portfolio_path = portfolio?.path;
-  console.log(portfolio_path);
-
   /*
     |----------------------------------------
     | Return
@@ -65,49 +59,49 @@ const HeroSection = () => {
 
           {/* Hero icons container */}
           <div className="hero_social_icons_container mb-5">
-            <Link
-              to="https://wa.me/233248359918?text=Hello Jhay, I need your service!!"
+            <a
+              href="https://wa.me/233248359918?text=Hello Jhay, I need your service!!"
               target="_blank"
               rel="noreferrer"
               className="social_link text_whatsapp"
             >
               <FaWhatsapp className="social_icon" />
-            </Link>
+            </a>
 
-            <Link
-              to="https://wa.me/233248359918?text=Hello Jhay, I need your service!!"
+            <a
+              href="https://wa.me/233248359918?text=Hello Jhay, I need your service!!"
               target="_blank"
               rel="noreferrer"
               className="social_link text_twitter"
             >
               <FaTwitter className="social_icon" />
-            </Link>
+            </a>
 
-            <Link
-              to="https://github.com/jhayphix"
+            <a
+              href="https://github.com/jhayphix"
               target="_blank"
               rel="noreferrer"
               className="social_link text_secondary_1"
             >
               <FaGithub className="social_icon" />
-            </Link>
+            </a>
 
-            <Link
-              to="https://wa.me/233248359918?text=Hello Jhay, I need your service!!"
+            <a
+              href="https://wa.me/233248359918?text=Hello Jhay, I need your service!!"
               target="_blank"
               rel="noreferrer"
               // className="social_link text_primary_color_1"
               className="social_link text_facebook"
             >
               <FaFacebook className="social_icon" />
-            </Link>
+            </a>
           </div>
 
           {/* Action buttons */}
           <div className="hero_btn_container d-flex align-items-center justify-content-center">
-            <Link to="" className="me-4">
-              <ButtonSpace btn_text="Explore" />
-            </Link>
+            <a href="#portfolio-section" className="me-4">
+              <ButtonStar btn_text="Explore" />
+            </a>
 
             <ButtonDownloadCV />
           </div>
