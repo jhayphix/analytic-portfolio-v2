@@ -1,10 +1,6 @@
 // Imports
 import BikeSalesImg from "@assets/images/projects/excel/ex_bike_sales_08_01_img.png";
 
-/*
-
-*/
-
 // Excel data base
 const ex_project_1_bike_sales = {
   id: 1,
