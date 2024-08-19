@@ -42,6 +42,12 @@ const ProjectContextProvider = ({ children }) => {
     setActiveTab(index);
     setCategory(category);
   };
+  
+  /*
+  |----------------------------------------
+  | Fetch
+  |----------------------------------------
+  */
 
   const projects = project_db;
 
@@ -50,6 +56,7 @@ const ProjectContextProvider = ({ children }) => {
       ? projects
       : projects?.filter((project) => project?.category === category);
 
+  console.log(filteredProjects)
   /*
   |----------------------------------------
   | Function
