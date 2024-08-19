@@ -20,16 +20,18 @@ export const navigation_db = {
       path: `${base_route}/portfolio`,
       end: false,
     },
+    
     {
       name: "About",
       path: `${base_route}/about`,
       end: false,
     },
-    {
-      name: "Services",
-      path: `${base_route}/services`,
-      end: false,
-    },
+    // Commented out but active. Uncomment to have a look
+    // {
+    //   name: "Services",
+    //   path: `${base_route}/services`,
+    //   end: false,
+    // },
     {
       name: "Contact",
       path: `${base_route}/contact`,

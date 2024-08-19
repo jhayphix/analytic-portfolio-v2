@@ -29,7 +29,7 @@ const StorySection = ({ project_story, story_tab }) => {
   return (
     <div className="story_section">
       <ProjectStoryTab story_tab={story_tab} setCategory={setCategory} />
-      <div className="row justify-content-center">
+      <div className="story_section_container row justify-content-center py-5">
         <div className="__story_container col-md-8 col-12">
           {story_info ? (
             story_info?.map((story, index) => {
@@ -38,10 +38,11 @@ const StorySection = ({ project_story, story_tab }) => {
                   style={story?.style}
                   list={story?.text}
                   key={index}
+                  className=""
                 />
               ) : (
                 <>
-                  <p className={`${story?.style}`} key={index}>
+                  <p className={`mb-3 ${story?.style}`} key={index}>
                     {story?.text}
                   </p>
                 </>

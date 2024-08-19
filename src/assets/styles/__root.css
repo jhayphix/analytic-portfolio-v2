@@ -53,6 +53,7 @@
   /* --text_accent_1: #1da1f2; */
   --text_accent_1: #1d5df2;
   --text_accent_2: #2f449d;
+  --text_accent_3: rgba(77, 157, 198);
 
   /* Secondary color */
   --text_secondary_1: rgba(255, 255, 255, 0.8);

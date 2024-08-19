@@ -4,7 +4,7 @@ export const project_tabs = [
   "Excel",
   "Tableau",
   "SQL",
-  "Python",
+  "Python"
 ];
 
 export const dashboard_story_tabs = ["Dashboard", "Story"];

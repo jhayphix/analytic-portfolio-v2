@@ -29,6 +29,8 @@ export const NavigationContext = createContext({
   toDashboardHandler: () => {},
 });
 
+
+
 const NavigationContextProvider = ({ children }) => {
   /*
   |----------------------------------------

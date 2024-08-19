@@ -5,7 +5,7 @@
   --h1_fs_sm: 27px;
   --h2_fs_sm: calc(var(--h1_fs_sm) - 2px);
   --h3_fs_sm: calc(var(--h2_fs_sm) - 3px);
-  --header_fw: 500;
+  --header_fw: bold;
   --header_mb: 0.5rem;
   --header_2_mb: 0rem;
   --header_3_mb: 0.2rem;
@@ -133,10 +133,10 @@
   |----------------------------------------
 */
 .__highlight {
-  color: var(--text_accent_1) !important;
+  color: var(--text_accent_3) !important;
 }
 .__color_accent {
-  color: var(--text_accent_1) !important;
+  color: var(--text_accent_3) !important;
 }
 
 /*

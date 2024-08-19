@@ -17,7 +17,7 @@ import NavTab from "@components/tabs/NavTab";
 const DashboardStoryTab = ({ setCategory }) => {
   const { dashboard_story_tabs } = useContext(ProjectContext);
 
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeTab, setActiveTab] = useState(1);
 
   const handleTabClick = (index, category) => {
     setActiveTab(index);
@@ -29,7 +29,7 @@ const DashboardStoryTab = ({ setCategory }) => {
   |----------------------------------------
   */
   return (
-    <div className="mb-lg-4 mb-3">
+    <div className="mb-lg-4 my-3">
       <NavTab
         activeTab={activeTab}
         tabs={dashboard_story_tabs}
