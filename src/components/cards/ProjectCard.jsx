@@ -5,6 +5,7 @@ import { BiPlusCircle } from "react-icons/bi";
 
 // ... Context
 import { NavigationContext } from "@contexts/NavigationContextProvider";
+import { ProjectContext } from "@contexts/ProjectContextProvider.jsx";
 
 // ... Components
 
@@ -17,8 +18,29 @@ import DefDashboardImg1 from "@assets/images/projects/default_dashboard/dashboar
   |----------------------------------------------------------------------------
 */
 const ProjectCard = ({ project }) => {
-  const { toDashboardHandler } = useContext(NavigationContext);
+  /*
+    |----------------------------------------
+    | Context and variable extration
+    |----------------------------------------
+  */
+  const { toProjectDetailsPage } = useContext(NavigationContext);
+  const { getActiveProjectId } = useContext(ProjectContext);
+
+  // Get project id handler
+  const projectIdHandler = (id) => {
+    getActiveProjectId(id)
+  }
   
+
+  // Extract variables from data (Project data)
+  const project_category = project?.categories[0]?.title;
+  const project_id = project?._id;
+  const project_main_image = project?.main_image?.asset?.url
+  const project_slug = project?.slug?.current;
+  const project_title = project?.title;
+  const project_type = project?.project_type
+
+
   /*
     |----------------------------------------
     | Return
@@ -28,16 +50,21 @@ const ProjectCard = ({ project }) => {
     <div className="work-box">
       {/* Image */}
       <Link
-        to={toDashboardHandler(project?.category, project?.id)}
+        to={toProjectDetailsPage(project_category, project_slug)}
         data-gallery="portfolioGallery"
         className="portfolio-lightbox"
         rel="noreferrer"
+        onClick={() => projectIdHandler(project_id)}
       >
         <div className="work-img">
           <img
-            src={project?.project_img ? project?.project_img : DefDashboardImg1}
-            alt={project.name}
+            src={project_main_image || DefDashboardImg1}
+            alt={project_title}
             className="img-fluid"
+            onError={(e) => {
+              e.target.onerror = null; // Prevents infinite loop if the default image fails
+              e.target.src = DefDashboardImg1; // Set the default image on error
+            }}
           />
         </div>
       </Link>
@@ -46,20 +73,21 @@ const ProjectCard = ({ project }) => {
       <div className="work-content">
         <div className="row">
           <div className="col-sm-9">
-            <h2 className="w-title mb-2">{project?.name}</h2>
+            <h2 className="w-title mb-2"> {project_title} </h2>
             <div className="w-more">
               <span className="w-category text_accent_1">
-                {project?.category}
+                {project_category}
               </span>{" "}
-              / <span className="w-date">{project?.type}</span>
+              / <span className="w-date">{project_type}</span>
             </div>
           </div>
           <div className="col-sm-3">
             <div className="w-like">
               <Link
                 className="plus_link"
-                to={toDashboardHandler(project?.category, project?.id)}
+                to={toProjectDetailsPage(project_category, project_slug)}
                 rel="noreferrer"
+                onClick={() => projectIdHandler(project_id)}
               >
                 {" "}
                 <BiPlusCircle className="plus_icon" />

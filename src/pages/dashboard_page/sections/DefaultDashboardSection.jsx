@@ -26,7 +26,7 @@ const DefaultDashboardSection = () => {
   */
   return (
     <>
-      <div className="dashboard_section">
+      <div className="project_details_section">
         <img
           className="dashboard_img"
           src={

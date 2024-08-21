@@ -8,7 +8,7 @@ import { NavigationContext } from "@contexts/NavigationContextProvider";
 // ... Components
 import AboutPage from "@pages/about_page/AboutPage";
 import ContactPage from "@pages/contact_page/ContactPage";
-import DashboardPage from "@pages/dashboard_page/DashboardPage";
+import ProjectDetailsPage from "@pages/dashboard_page/ProjectDetailsPage";
 import HomePage from "@pages/home_page/HomePage";
 import PortfolioPage from "@pages/portfolio_page/PortfolioPage";
 import ServicePage from "@pages/service_page/ServicePage";
@@ -47,7 +47,7 @@ const WebRouting = () => {
       <Route path={contact.path} element={<ContactPage />} />
 
       {/* Dashboard page */}
-      <Route path={dashboard.path} element={<DashboardPage />} />
+      <Route path={dashboard.path} element={<ProjectDetailsPage />} />
 
       {/* Not found */}
       <Route path="*" element="Not Found" />

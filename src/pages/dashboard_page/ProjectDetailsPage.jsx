@@ -1,10 +1,9 @@
 // ... React modules
-import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useContext } from "react";
 
 // ... Context
-import { ProjectInfoContext } from "@contexts/ProjectInfoContextProvider";
-// import { DefaultContext } from "@contexts/DefaultContextProvider";
+//import { ProjectContentContext } from "@contexts/ProjectContentContextProvider";
+import { ProjectContext } from "@contexts/ProjectContextProvider.jsx";
 
 // ... Components
 import PortfolioBreadCrumb from "@components/breadcrumb/PortfolioBreadCrumb";
@@ -12,7 +11,7 @@ import DashboardStoryTab from "@components/tabs/DashboardStoryTab";
 import PageBannerSection from "@components/banners/PageBannerSection";
 // import ProjectBanner from "@components/banners/ProjectBanner";
 
-import DashboardSection from "@pages/dashboard_page/sections/DashboardSection";
+import ProjectDetailsSection from "@pages/dashboard_page/sections/ProjectDetailsSection";
 import StorySection from "@pages/dashboard_page/sections/StorySection";
 
 // ... Assets
@@ -22,36 +21,25 @@ import StorySection from "@pages/dashboard_page/sections/StorySection";
 |----------------------------------------------------------------------------
 |----------------------------------------------------------------------------
 */
-const DashboardPage = () => {
-  /*
-  |----------------------------------------
-  | Contexts and states
-  |----------------------------------------
-  */
-  const params = useParams();
+const ProjectDetailsPage = () => {
+  // Context
   const {
-    setProjectParams,
-    project_story,
-    project_story_nav,
-    // project_img,
-    project_name,
-    project_cat,
-    project_category,
-  } = useContext(ProjectInfoContext);
-  // const { def_dashboard_img_1 } = useContext(DefaultContext);
-  const [category, setCategory] = useState("story");
+    active_dashboard_story_tab, active_project,
 
-  useEffect(() => {
-    setProjectParams(params);
-  }, [params, setProjectParams]);
+    // To delete
+    project_story, project_story_nav, project_name, project_category, project_cat
+  } = useContext(ProjectContext);
+
+  console.log("Active project => ", active_project)
 
   /*
   |----------------------------------------
-  | Comment here
+  | Return
   |----------------------------------------
   */
   return (
     <div className="container-lg" style={{ paddingBottom: "60px" }}>
+
       <PageBannerSection pageName={project_name} />
       {/* <ProjectBanner
         projectImg={project_img ? project_img : def_dashboard_img_1}
@@ -64,18 +52,19 @@ const DashboardPage = () => {
         project_name={project_name}
       />
 
-      <DashboardStoryTab category={category} setCategory={setCategory} />
+      {/* Work on category == */}
+      <DashboardStoryTab />
 
-      {category === "story" ? 
+      {active_dashboard_story_tab === "story" ? 
         <StorySection
           project_story={project_story}
           story_tab={project_story_nav}
         />
        : (
-        <DashboardSection />
+        <ProjectDetailsSection />
       )}
     </div>
   );
 };
 
-export default DashboardPage;
+export default ProjectDetailsPage;

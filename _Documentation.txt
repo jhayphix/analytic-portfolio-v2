@@ -1,3 +1,29 @@
+Config Files
+    Config.js : src/Config.js - Handle fetching of data
+
+Contexts 
+    Navigation Context Provider - Handler context relating to navigations
+    Project Context Provider - Handle context relating to projects
+
+
+Portfolio Page : Display all projects
+    Portfolio section > Portfolio Thread > Project Card
+
+Project Details Page : Display details and contents of a project
+    Page Banner Section
+    Project details section 
+    Active Dashboard Story Tab > NavTab
+
+To Delete
+    ProjectContextProvider
+    ProjectContentContextProvider
+
+
+To do 
+    Active tab state in DashboardStoryTab
+
+
+
 // ... React modules
 import { createContext, useState, useEffect} from "react";
 

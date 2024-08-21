@@ -3,6 +3,7 @@
 // ... Contexts
 import ProjectContextProvider from "@contexts/ProjectContextProvider";
 import ProjectInfoContextProvider from "@contexts/ProjectInfoContextProvider";
+import ProjectContentContextProvider from "@contexts/ProjectContentContextProvider";
 import ThemeContextProvider from "@contexts/ThemeContextProvider";
 import NavigationContextProvider from "@contexts/NavigationContextProvider";
 
@@ -37,9 +38,11 @@ const AppContextProvider = ({ children }) => {
           <DefaultContextProvider>
             <ProjectContextProvider>
               <ProjectProvider>
+                <ProjectContentContextProvider>
                 <ProjectInfoContextProvider>
                   {children}
                 </ProjectInfoContextProvider>
+                </ProjectContentContextProvider>
               </ProjectProvider>
             </ProjectContextProvider>
           </DefaultContextProvider>

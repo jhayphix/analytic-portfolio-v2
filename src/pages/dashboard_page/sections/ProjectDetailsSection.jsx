@@ -15,7 +15,7 @@ import DefaultDashboardSection from "@pages/dashboard_page/sections/DefaultDashb
   |----------------------------------------------------------------------------
   |----------------------------------------------------------------------------
 */
-const DashboardSection = () => {
+const ProjectDetailsSection = () => {
   const { project_cat } = useContext(ProjectInfoContext);
   const project_category = project_cat;
   /*
@@ -30,4 +30,4 @@ const DashboardSection = () => {
   }
 };
 
-export default DashboardSection;
+export default ProjectDetailsSection;

@@ -1,6 +1,7 @@
 // ... React modules
 import ReactDOM from "react-dom/client";
 
+
 // ... Components
 import App from "@src/App";
 
@@ -27,7 +28,7 @@ import "@components/buttons/button_star.css";
 import "@components/buttons/button_space.css";
 import "@components/buttons/button_document.css";
 
-import "@pages/dashboard_page/sections/dashboard_section.css";
+import "@pages/dashboard_page/sections/project_details_section.css";
 import "@pages/dashboard_page/sections/story_classes.css";
 
 import "@layouts/navigation.css";

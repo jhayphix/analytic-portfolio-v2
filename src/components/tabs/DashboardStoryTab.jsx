@@ -1,5 +1,5 @@
 // ... React modules
-import { useContext, useState } from "react";
+import { useContext } from "react";
 
 // ... Context
 import { ProjectContext } from "@contexts/ProjectContextProvider.jsx";
@@ -14,14 +14,12 @@ import NavTab from "@components/tabs/NavTab";
   |----------------------------------------------------------------------------
   |----------------------------------------------------------------------------
 */
-const DashboardStoryTab = ({ setCategory }) => {
-  const { dashboard_story_tabs } = useContext(ProjectContext);
+const DashboardStoryTab = () => {
+  const { dashboard_story_tabs, setActiveDashboardStoryTab, active_dashboard_story_index, setActiveDashboardStoryIndex } = useContext(ProjectContext);
 
-  const [activeTab, setActiveTab] = useState(1);
-
-  const handleTabClick = (index, category) => {
-    setActiveTab(index);
-    setCategory(category);
+  const handleTabClick = (tab_index, tab_name) => {
+    setActiveDashboardStoryIndex(tab_index);
+    setActiveDashboardStoryTab(tab_name);
   };
   /*
   |----------------------------------------
@@ -31,7 +29,7 @@ const DashboardStoryTab = ({ setCategory }) => {
   return (
     <div className="mb-lg-4 my-3">
       <NavTab
-        activeTab={activeTab}
+        activeTab={active_dashboard_story_index}
         tabs={dashboard_story_tabs}
         handleTabClick={handleTabClick}
       />

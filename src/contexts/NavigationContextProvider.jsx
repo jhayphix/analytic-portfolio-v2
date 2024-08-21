@@ -26,7 +26,7 @@ export const NavigationContext = createContext({
   service: {},
   contact: {},
 
-  toDashboardHandler: () => {},
+  toProjectDetailsPage: () => {},
 });
 
 
@@ -53,7 +53,7 @@ const NavigationContextProvider = ({ children }) => {
   | Dashboard custom route
   |----------------------------------------
   */
-  const toDashboardHandler = (category, id) => {
+  const toProjectDetailsPage = (category, id) => {
     const path = `/${base_route}/project/${category}/${id}`;
     return path;
   };
@@ -74,7 +74,7 @@ const NavigationContextProvider = ({ children }) => {
     service,
     contact,
 
-    toDashboardHandler,
+    toProjectDetailsPage,
   };
 
   /*
