@@ -28,8 +28,8 @@ import "@components/buttons/button_star.css";
 import "@components/buttons/button_space.css";
 import "@components/buttons/button_document.css";
 
-import "@pages/dashboard_page/sections/project_details_section.css";
-import "@pages/dashboard_page/sections/story_classes.css";
+import "@pages/project_details_page/sections/project_details_section.css";
+import "@pages/project_details_page/sections/story_classes.css";
 
 import "@layouts/navigation.css";
 import "@components/cards/cards.css";

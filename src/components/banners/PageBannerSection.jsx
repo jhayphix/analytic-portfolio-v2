@@ -19,6 +19,6 @@ const PageBannerSection = ({ pageName }) => {
   );
 };
 
-PageBannerSection.defaultProps = [{ pageName: "Page" }];
+PageBannerSection.defaultProps = [{ pageName: "Project" }];
 
 export default PageBannerSection;

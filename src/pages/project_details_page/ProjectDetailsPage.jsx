@@ -1,8 +1,8 @@
 // ... React modules
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 // ... Context
-//import { ProjectContentContext } from "@contexts/ProjectContentContextProvider";
 import { ProjectContext } from "@contexts/ProjectContextProvider.jsx";
 
 // ... Components
@@ -11,8 +11,8 @@ import DashboardStoryTab from "@components/tabs/DashboardStoryTab";
 import PageBannerSection from "@components/banners/PageBannerSection";
 // import ProjectBanner from "@components/banners/ProjectBanner";
 
-import ProjectDetailsSection from "@pages/dashboard_page/sections/ProjectDetailsSection";
-import StorySection from "@pages/dashboard_page/sections/StorySection";
+import ProjectDashboardSection from "@pages/project_details_page/sections/ProjectDashboardSection";
+import StorySection from "@pages/project_details_page/sections/StorySection";
 
 // ... Assets
 
@@ -24,13 +24,20 @@ import StorySection from "@pages/dashboard_page/sections/StorySection";
 const ProjectDetailsPage = () => {
   // Context
   const {
-    active_dashboard_story_tab, active_project,
-
-    // To delete
-    project_story, project_story_nav, project_name, project_category, project_cat
+    active_dashboard_story_tab, active_project, getProjectDetailsPramas
   } = useContext(ProjectContext);
 
-  console.log("Active project => ", active_project)
+
+
+  // Set page params
+  const params = useParams()
+  useEffect(() => {
+    getProjectDetailsPramas(params)
+  },[params, getProjectDetailsPramas])
+
+  
+  const project_category = active_project?.categories?.[0]?.title || "Category";
+  const project_title = active_project?.title || "Title";
 
   /*
   |----------------------------------------
@@ -40,28 +47,19 @@ const ProjectDetailsPage = () => {
   return (
     <div className="container-lg" style={{ paddingBottom: "60px" }}>
 
-      <PageBannerSection pageName={project_name} />
-      {/* <ProjectBanner
-        projectImg={project_img ? project_img : def_dashboard_img_1}
-        projectName={project_name ? project_name : project_category}
-      /> */}
+      <PageBannerSection pageName={project_title} />
 
       <PortfolioBreadCrumb
         project_category={project_category}
-        project_cat={project_cat}
-        project_name={project_name}
+        project_name={project_title}
       />
 
-      {/* Work on category == */}
       <DashboardStoryTab />
 
       {active_dashboard_story_tab === "story" ? 
-        <StorySection
-          project_story={project_story}
-          story_tab={project_story_nav}
-        />
+        <StorySection />
        : (
-        <ProjectDetailsSection />
+        <ProjectDashboardSection/>
       )}
     </div>
   );

@@ -18,6 +18,7 @@ export const ProjectContext = createContext({
 
   active_dashboard_story_tab: "", setActiveDashboardStoryTab: () => {},
   active_dashboard_story_index: "", setActiveDashboardStoryIndex: () => {},
+  active_project_story_tab: "", setActiveProjectStoryTab: () => {},
 
   projectTabs: [],
   dashboard_story_tabs: [],
@@ -29,9 +30,9 @@ export const ProjectContext = createContext({
   setPosts: () => {},
   loadPosts: () => {},
 
-  getActiveProjectId: () => {},
   active_project: "",
   setActiveProject: () => {}, 
+  getProjectDetailsPramas: () => {},
 });
 
 /*
@@ -50,6 +51,7 @@ const ProjectContextProvider = ({ children }) => {
   const [activeTab, setActiveTab] = useState(0);
   const [active_dashboard_story_index, setActiveDashboardStoryIndex] = useState(1);
   const [active_dashboard_story_tab, setActiveDashboardStoryTab] = useState("story")
+  const [active_project_story_tab, setActiveProjectStoryTab] = useState("introduction");
   const [category, setCategory] = useState("all");
   const [posts, setPosts] = useState([]);
   const [projectTabs, setProjectTabs] = useState(["All"]);
@@ -75,7 +77,7 @@ const ProjectContextProvider = ({ children }) => {
     loadPosts()
     loadProjectCategories()
   }, [])
-  
+
 
   /*
   |----------------------------------------
@@ -93,10 +95,11 @@ const ProjectContextProvider = ({ children }) => {
     );
 
   // Get active project
-  const getActiveProjectId = (project_id) => {
-    if(project_id){
+  const getProjectDetailsPramas = (params) => {
+    const active_project_id = params?.id
+    if(active_project_id){
       const filtered_active_project = projects?.find(
-         (project) => project?._id === project_id
+         (project) => project?._id === active_project_id
         );
       setActiveProject(filtered_active_project)
     }
@@ -136,10 +139,12 @@ const ProjectContextProvider = ({ children }) => {
     activeTab, setActiveTab,
     active_dashboard_story_tab, setActiveDashboardStoryTab,
     active_dashboard_story_index, setActiveDashboardStoryIndex,
-    active_project, setActiveProject, getActiveProjectId, 
+    active_project_story_tab, setActiveProjectStoryTab,
+    active_project, setActiveProject, 
     category, setCategory, 
     changeProjectCategory,
     dashboard_story_tabs,
+    getProjectDetailsPramas,
     handleTabClick,
     posts, setPosts, loadPosts,
     projectTabs, 

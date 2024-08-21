@@ -11,177 +11,117 @@ Portfolio Page : Display all projects
 
 Project Details Page : Display details and contents of a project
     Page Banner Section
-    Project details section 
-    Active Dashboard Story Tab > NavTab
+    PortfolioBreadCrumb
+    Dashboard Story Tab > NavTab
+    StorySection > ProjectStoryTab
+    Project Dashboard Section 
+
 
 To Delete
-    ProjectContextProvider
-    ProjectContentContextProvider
+    All project context
 
 
-To do 
-    Active tab state in DashboardStoryTab
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 // ... React modules
-import { createContext, useState, useEffect} from "react";
+import { useContext } from "react";
 
 // ... Context
+import { ProjectContext } from "@contexts/ProjectContextProvider.jsx";
 
 // ... Components
+import ProjectStoryTab from "@components/tabs/ProjectStoryTab";
 
 // ... Assets
-import {fetchPosts, fetchProjectCategories} from "@src/config.js"
-import { dashboard_story_tabs } from "@data/tab_db";
-
-export const ProjectContext = createContext({
-  activeTab: "",
-  setActiveTab: () => {},
-  category: "",
-  setCategory: () => {},
-  changeProjectCategory: () => {},
-
-  active_dashboard_story_tab: "", setActiveDashboardStoryTab: () => {},
-  active_dashboard_story_index: "", setActiveDashboardStoryIndex: () => {},
-
-  projectTabs: [],
-  dashboard_story_tabs: [],
-  handleTabClick: () => {},
-  projects: [],
-  filteredProjects: [],
-
-  posts: [],
-  setPosts: () => {},
-  loadPosts: () => {},
-
-  getActiveProjectId: () => {},
-  active_project: "",
-  setActiveProject: () => {}, 
-});
 
 /*
   |----------------------------------------------------------------------------
   |----------------------------------------------------------------------------
   |----------------------------------------------------------------------------
 */
-const ProjectContextProvider = ({ children }) => {
+const StorySection = () => {
+  const { active_project, active_project_story_tab, setActiveProjectStoryTab } =
+    useContext(ProjectContext);
+
+  const project_stories = active_project?.stories;
+  const all_story_tabs = project_stories?.map((item) => item?.tab);
+
+  const filtered_story = project_stories?.find(
+    (story) =>
+      story?.tab?.toLowerCase() === active_project_story_tab?.toLowerCase()
+  );
+
+  const filtered_story_content = filtered_story?.content || [];
+  console.log(filtered_story_content);
   /*
   |----------------------------------------
-  | Project config
-  |----------------------------------------
-  */
-  // Set states
-  const [active_project, setActiveProject] = useState({})
-  const [activeTab, setActiveTab] = useState(0);
-  const [active_dashboard_story_index, setActiveDashboardStoryIndex] = useState(1);
-  const [active_dashboard_story_tab, setActiveDashboardStoryTab] = useState("story")
-  const [category, setCategory] = useState("all");
-  const [posts, setPosts] = useState([]);
-  const [projectTabs, setProjectTabs] = useState(["All"]);
-
-  /*
-  |----------------------------------------
-  | Fetch Data
-  |----------------------------------------
-  */
-  // Fetch all posts (Projects)
-  const loadPosts = async () => {
-    const fetchedPosts = await fetchPosts();
-    setPosts(fetchedPosts);
-  };
-  // Fetch project's categories eg. Excel, Python, Timeseries
-  const loadProjectCategories = async () => {
-    const fetchedCategories = await fetchProjectCategories();
-    const titlesArray = ["All", ...fetchedCategories?.map((item) => item.title)]
-    setProjectTabs(titlesArray);
-  };
-  // Lood the posts (Projects)
-  useEffect(() => {
-    loadPosts()
-    loadProjectCategories()
-  }, [])
-  
-
-  /*
-  |----------------------------------------
-  | Filter projects
-  |----------------------------------------
-  */
-  // Filter projects base on selected category or tab clicked
-  const projects = posts;
-  const filteredProjects = category === "all"
-  ? projects
-  : projects?.filter((project) =>
-      project?.categories?.some((cat) =>
-        cat?.title?.toLowerCase() === category?.toLowerCase()
-      )
-    );
-
-  // Get active project
-  const getActiveProjectId = (project_id) => {
-    if(project_id){
-      const filtered_active_project = projects?.find(
-         (project) => project?._id === project_id
-        );
-      setActiveProject(filtered_active_project)
-    }
-  }
-
-  /*
-  |----------------------------------------
-  | Tabs and Categories
-  |----------------------------------------
-  */
-  // Get the tab which is clicked's index and category
-  const handleTabClick = (index, category) => {
-    setActiveTab(index);
-    setCategory(category);
-  };
-  
-  // Change selected project category (eg. Excel) when different tab is clicked
-  const changeProjectCategory = (category) => {
-    const project_category = category?.toLowerCase();
-    setCategory(project_category);
-
-    projectTabs?.forEach((tab) => {
-      if (tab?.toLowerCase() === project_category) {
-        const index = projectTabs?.indexOf(tab);
-        setActiveTab(index);
-      }
-    });
-  };
-
-
-  /*
-  |----------------------------------------
-  | Context
-  |----------------------------------------
-  */
-  const context = {
-    activeTab, setActiveTab,
-    active_dashboard_story_tab, setActiveDashboardStoryTab,
-    active_dashboard_story_index, setActiveDashboardStoryIndex,
-    active_project, setActiveProject, getActiveProjectId, 
-    category, setCategory, 
-    changeProjectCategory,
-    dashboard_story_tabs,
-    handleTabClick,
-    posts, setPosts, loadPosts,
-    projectTabs, 
-    projects, filteredProjects,
-  };
-
-  /*
-  |----------------------------------------
-  | Return jsx
+  | Return
   |----------------------------------------
   */
   return (
-    <ProjectContext.Provider value={context}>
-      {children}
-    </ProjectContext.Provider>
+    <div className="story_section">
+      <ProjectStoryTab
+        story_tab={all_story_tabs}
+        setCategory={setActiveProjectStoryTab}
+      />
+
+      <div className="story_section_container row justify-content-center py-5">
+        <div className="__story_container col-md-8 col-12">
+          {filtered_story_content ? (
+            filtered_story_content.map((story, index) => {
+              return (
+                <p> </p>
+              );
+            })
+          ) : (
+            <div> Story is currently unavailable... </div>
+          )}
+        </div>
+      </div>
+    </div>
   );
 };
 
-export default ProjectContextProvider;
+export default StorySection;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -2,8 +2,8 @@
 import { useContext } from "react";
 
 // ... Context
-import { ProjectInfoContext } from "@contexts/ProjectInfoContextProvider";
 import { DefaultContext } from "@contexts/DefaultContextProvider";
+import { ProjectContext } from "@contexts/ProjectContextProvider.jsx";
 
 // ... Components
 
@@ -15,10 +15,13 @@ import { DefaultContext } from "@contexts/DefaultContextProvider";
   |----------------------------------------------------------------------------
 */
 const DefaultDashboardSection = () => {
-  const { project_dashboard_img, project_name } =
-    useContext(ProjectInfoContext);
-
   const { def_dashboard_img_2 } = useContext(DefaultContext);
+
+  const {active_project} = useContext(ProjectContext);
+
+  
+  const project_main_image = active_project?.main_image?.asset?.url || def_dashboard_img_2;
+
   /*
   |----------------------------------------
   | Return
@@ -30,9 +33,13 @@ const DefaultDashboardSection = () => {
         <img
           className="dashboard_img"
           src={
-            project_dashboard_img ? project_dashboard_img : def_dashboard_img_2
+            project_main_image
           }
-          alt={project_name}
+          alt={"Project name"}
+          onError={(e) => {
+            e.target.onerror = null; // Prevents infinite loop if the default image fails
+            e.target.src = def_dashboard_img_2; // Set the default image on error
+          }}
         />
       </div>
     </>

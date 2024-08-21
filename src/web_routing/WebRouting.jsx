@@ -8,7 +8,7 @@ import { NavigationContext } from "@contexts/NavigationContextProvider";
 // ... Components
 import AboutPage from "@pages/about_page/AboutPage";
 import ContactPage from "@pages/contact_page/ContactPage";
-import ProjectDetailsPage from "@pages/dashboard_page/ProjectDetailsPage";
+import ProjectDetailsPage from "@pages/project_details_page/ProjectDetailsPage";
 import HomePage from "@pages/home_page/HomePage";
 import PortfolioPage from "@pages/portfolio_page/PortfolioPage";
 import ServicePage from "@pages/service_page/ServicePage";

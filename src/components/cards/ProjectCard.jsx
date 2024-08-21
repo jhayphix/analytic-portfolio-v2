@@ -5,7 +5,6 @@ import { BiPlusCircle } from "react-icons/bi";
 
 // ... Context
 import { NavigationContext } from "@contexts/NavigationContextProvider";
-import { ProjectContext } from "@contexts/ProjectContextProvider.jsx";
 
 // ... Components
 
@@ -24,21 +23,14 @@ const ProjectCard = ({ project }) => {
     |----------------------------------------
   */
   const { toProjectDetailsPage } = useContext(NavigationContext);
-  const { getActiveProjectId } = useContext(ProjectContext);
-
-  // Get project id handler
-  const projectIdHandler = (id) => {
-    getActiveProjectId(id)
-  }
-  
 
   // Extract variables from data (Project data)
-  const project_category = project?.categories[0]?.title;
-  const project_id = project?._id;
-  const project_main_image = project?.main_image?.asset?.url
-  const project_slug = project?.slug?.current;
-  const project_title = project?.title;
-  const project_type = project?.project_type
+  const project_category = project?.categories?.[0]?.title || "Category";
+  const project_id = project?._id || "";
+  const project_main_image = project?.main_image?.asset?.url || "";
+  const project_slug = project?.slug?.current || "slug";
+  const project_title = project?.title || "Title";
+  const project_type = project?.project_type || "Type";
 
 
   /*
@@ -50,11 +42,10 @@ const ProjectCard = ({ project }) => {
     <div className="work-box">
       {/* Image */}
       <Link
-        to={toProjectDetailsPage(project_category, project_slug)}
+        to={toProjectDetailsPage(project_category, project_slug, project_id)}
         data-gallery="portfolioGallery"
         className="portfolio-lightbox"
         rel="noreferrer"
-        onClick={() => projectIdHandler(project_id)}
       >
         <div className="work-img">
           <img
@@ -85,9 +76,8 @@ const ProjectCard = ({ project }) => {
             <div className="w-like">
               <Link
                 className="plus_link"
-                to={toProjectDetailsPage(project_category, project_slug)}
+                to={toProjectDetailsPage(project_category, project_slug, project_id)}
                 rel="noreferrer"
-                onClick={() => projectIdHandler(project_id)}
               >
                 {" "}
                 <BiPlusCircle className="plus_icon" />

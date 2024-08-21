@@ -175,3 +175,42 @@
     margin-left: var(--para_3_sm);
   }
 }
+
+/* New class */
+.story_section {
+  padding: 20px;
+}
+
+.story_section_container {
+  display: flex;
+  justify-content: center;
+}
+
+.__story_container {
+  max-width: 800px;
+  width: 100%;
+}
+
+.story-block {
+  margin-bottom: 1rem; /* Space between blocks */
+}
+
+.story-block.h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.story-block.normal {
+  font-size: 1rem;
+}
+
+.bullet-list {
+  list-style-type: disc; /* Adjust bullet list style */
+  margin-left: 1.5rem; /* Adjust indentation */
+}
+
+.bullet-list::before {
+  content: "•"; /* Customize bullet style */
+  margin-right: 0.5rem;
+  color: #000;
+}

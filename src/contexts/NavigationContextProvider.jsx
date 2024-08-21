@@ -53,8 +53,8 @@ const NavigationContextProvider = ({ children }) => {
   | Dashboard custom route
   |----------------------------------------
   */
-  const toProjectDetailsPage = (category, id) => {
-    const path = `/${base_route}/project/${category}/${id}`;
+  const toProjectDetailsPage = (category, slug, id) => {
+    const path = `/${base_route}/project/${category}/${slug}/${id}`;
     return path;
   };
 

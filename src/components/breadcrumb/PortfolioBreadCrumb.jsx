@@ -19,8 +19,8 @@ const PortfolioBreadCrumb = ({ project_category, project_name }) => {
   const { home, portfolio } = useContext(NavigationContext);
   const { changeProjectCategory } = useContext(ProjectContext);
 
-  const home_path = home?.path ? home?.path : "";
-  const portfolio_path = portfolio?.path ? portfolio?.path : "";
+  const home_path = home?.path || "";
+  const portfolio_path = portfolio?.path || "";
   /*
   |----------------------------------------
   | Return
@@ -47,11 +47,11 @@ const PortfolioBreadCrumb = ({ project_category, project_name }) => {
                 changeProjectCategory(project_category);
               }}
             >
-              {project_category ? project_category : ""}
+              {project_category || ""}
             </Link>
           </li>
           <li className="breadcrumb-item active" aria-current="page">
-            {project_name ? project_name : ""}
+            {project_name || ""}
           </li>
         </ol>
       </nav>

@@ -53,7 +53,7 @@ export const navigation_db = {
   },
   dashboard: {
     name: "Project",
-    path: `/${base_route}/project/:cat/:id`,
+    path: `/${base_route}/project/:cat/:slug/:id`,
   },
   service: {
     name: "Services",

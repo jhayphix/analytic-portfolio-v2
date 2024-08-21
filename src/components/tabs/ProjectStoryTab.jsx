@@ -14,7 +14,8 @@ import NavTab from "@components/tabs/NavTab";
   |----------------------------------------------------------------------------
 */
 const ProjectStoryTab = ({ story_tab, setCategory }) => {
-  const tabs = story_tab;
+  // Context
+  
 
   const [activeTab, setActiveTab] = useState(0);
 
@@ -22,6 +23,13 @@ const ProjectStoryTab = ({ story_tab, setCategory }) => {
     setActiveTab(index);
     setCategory(category);
   };
+
+  
+  
+  const tabs = story_tab;
+  
+
+  
 
   /*
   |----------------------------------------
