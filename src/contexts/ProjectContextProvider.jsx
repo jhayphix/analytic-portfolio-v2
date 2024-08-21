@@ -19,6 +19,7 @@ export const ProjectContext = createContext({
   active_dashboard_story_tab: "", setActiveDashboardStoryTab: () => {},
   active_dashboard_story_index: "", setActiveDashboardStoryIndex: () => {},
   active_project_story_tab: "", setActiveProjectStoryTab: () => {},
+  active_project_story_index: "", setActiveProjectStoryIndex: () => {},
 
   projectTabs: [],
   dashboard_story_tabs: [],
@@ -52,6 +53,7 @@ const ProjectContextProvider = ({ children }) => {
   const [active_dashboard_story_index, setActiveDashboardStoryIndex] = useState(1);
   const [active_dashboard_story_tab, setActiveDashboardStoryTab] = useState("story")
   const [active_project_story_tab, setActiveProjectStoryTab] = useState("introduction");
+  const [active_project_story_index, setActiveProjectStoryIndex] = useState(0);
   const [category, setCategory] = useState("all");
   const [posts, setPosts] = useState([]);
   const [projectTabs, setProjectTabs] = useState(["All"]);
@@ -140,6 +142,7 @@ const ProjectContextProvider = ({ children }) => {
     active_dashboard_story_tab, setActiveDashboardStoryTab,
     active_dashboard_story_index, setActiveDashboardStoryIndex,
     active_project_story_tab, setActiveProjectStoryTab,
+    active_project_story_index, setActiveProjectStoryIndex,
     active_project, setActiveProject, 
     category, setCategory, 
     changeProjectCategory,

@@ -17,34 +17,81 @@ const StorySection = () => {
   const filtered_story_content = filtered_story?.content || [];
 
   return (
-    <div className="story_section">
+    <div className="__story_section">
       <ProjectStoryTab
         story_tab={all_story_tabs}
         setCategory={setActiveProjectStoryTab}
       />
 
-      <div className="story_section_container row justify-content-center py-5">
+      <div className="__story_section_container py-5">
         <div className="__story_container col-md-8 col-12">
           {filtered_story_content.length > 0 ? (
             filtered_story_content.map((story, index) => {
-              const { _type, style, children, listItem } = story;
-              const textContent = children.map((child) => child.text).join("");
+              const { _type, style, children, listItem, asset, alt, caption } =
+                story;
+              const textContent = children
+                ? children.map((child) => child.text).join("")
+                : "";
 
-              if (_type === "block") {
-                return (
-                  <div
-                    key={index}
-                    className={`story-block ${style} ${
-                      listItem === "bullet" ? "bullet-list" : ""
-                    }`}
-                    style={{ marginBottom: "1rem" }} // Add spacing between blocks
-                  >
-                    {textContent}
-                  </div>
-                );
+              switch (_type) {
+                // When it is a block type
+                case "block":
+                  return (
+                    <div
+                      key={index}
+                      className={`__story_block ${style} ${
+                        listItem === "bullet" ? "__bullet_list" : ""
+                      }`}
+                    >
+                      {textContent}
+                    </div>
+                  );
+
+                // When it is an image
+                case "image":
+                  return (
+                    <div key={index} className="__story_image">
+                      <img src={asset?._ref} alt={alt || "Story image"} />
+                      {caption && <p className="__image_caption">{caption}</p>}
+                    </div>
+                  );
+
+                // When it is a quote
+                case "quote":
+                  return (
+                    <blockquote key={index} className="__story_quote">
+                      {textContent}
+                    </blockquote>
+                  );
+
+                // When it is a lecture
+                case "list":
+                  return (
+                    <ul
+                      key={index}
+                      className={`__story_list ${
+                        listItem === "bullet" ? "__bullet_list" : ""
+                      }`}
+                    >
+                      {children.map((child, idx) => (
+                        <li key={idx}>{child.text}</li>
+                      ))}
+                    </ul>
+                  );
+
+                // When it is embed
+                case "embed":
+                  return (
+                    <div
+                      key={index}
+                      className="__story_embed"
+                      dangerouslySetInnerHTML={{ __html: story.url }}
+                    />
+                  );
+
+                default:
+                  return null;
               }
-
-              return null;
             })
           ) : (
             <div>Story is currently unavailable...</div>

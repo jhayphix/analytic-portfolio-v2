@@ -1,142 +1,147 @@
 :root {
-  --h1_fs: 33px;
-  --h2_fs: calc(var(--h1_fs) - 10px);
-  --h3_fs: calc(var(--h2_fs) - 4px);
-  --h1_fs_sm: 27px;
-  --h2_fs_sm: calc(var(--h1_fs_sm) - 2px);
-  --h3_fs_sm: calc(var(--h2_fs_sm) - 3px);
-  --header_fw: bold;
-  --header_mb: 0.5rem;
-  --header_2_mb: 0rem;
-  --header_3_mb: 0.2rem;
+  --h1_fs: 2.5rem;
+  --h2_fs: 1.9rem;
+  --h3_fs: 1.5rem;
+  --h4_fs: 1.4rem;
+  --normal_fs: 1.2rem;
+  --bullet_fs: 0.9rem;
 
-  --text_fs: 20px;
-  --text_fs_sm: 19px;
-  --text_lg_fs: calc(var(--text_fs) + 5px);
-  --text_lg_fs_sm: calc(var(--text_fs_sm) + 5px);
-  --text_fw: 300;
-  --text_mb: 0.9rem;
-  --text_short_mb: 0.1rem;
+  --h1_fw: 700;
+  --h2_fw: 600;
+  --h3_fw: 500;
+  --h4_fw: 450;
+  --normal_fw: 300;
 
-  --ul_mb: 0.3rem;
+  --color_highlight: rgba(77, 157, 198);
 
-  --para: 2rem;
-  --para_sm: 1rem;
-  --para_2: calc(var(--para) + 2rem);
-  --para_2_sm: calc(var(--para_sm) + 0.5rem);
-  --para_3: calc(var(--para_2) + 1rem);
-  --para_3_sm: calc(var(--para_2_sm) + 0.5rem);
+  --bullet_dot: "•";
+  --bullet_circle: "\25CB"; /* ○ Circle Bullet */
+  --bullet_square: "\25A0"; /* ■ Square Bullet */
+  --bullet_star: "\2605"; /* ★ Star Bullet */
+  --bullet_diamond: "\2666"; /* ♦ Diamond Bullet */
+  --bullet_check: "\2714"; /* ✔ Check Mark Bullet */
+  --bullet_cross: "\2718"; /* ✘ Cross Bullet */
+  --bullet_triangle: "\25B2"; /* ▲ Triangle Bullet */
+  --bullet_triangle_right: "\25B7"; /* ▷ */
+  --bullet_triangle_fill_right: "\25B6"; /* ▶ */
+  --bullet_arrow: "\2192"; /* → Arrow Bullet */
 }
 
 /*
   |----------------------------------------
-  | Typo
+  | Layout
   |----------------------------------------
 */
-/* Headers */
-.__header,
-.__header_1,
-.__header_2,
-.__header_3 {
-  font-weight: var(--header_fw);
+.__story_section {
+  padding: 1.25rem;
+  line-height: 1.5rem; /* 24px */
+  letter-spacing: 0.05rem; /* or use 0.05rem to 0.1rem if needed */
 }
 
-.__header,
-.__header_1 {
-  font-size: var(--h1_fs);
-  margin-bottom: var(--header_mb);
-}
-.__header_2 {
-  font-size: var(--h2_fs);
-  margin-bottom: var(--header_2_mb);
-}
-.__header_3 {
-  font-size: var(--h3_fs);
-  margin-bottom: var(--header_3_mb);
-}
-
-/* Text */
-.__text,
-.__text_lg {
-  font-weight: var(--text_fw);
-  margin-bottom: var(--text_mb);
-}
-
-.__text {
-  font-size: var(--text_fs);
-}
-
-.__text_lg {
-  font-size: var(--text_lg_fs);
-}
-
-.__text_short {
-  margin-bottom: var(--text_short_mb);
-}
-
-/* ------------------------------------------------------------------ */
-
-/*
-  |----------------------------------------
-  | Lookup Styles
-  |----------------------------------------
-*/
-
-/* Container */
-.__block {
-  padding: 10px 10px;
-  border-radius: 10px;
+.__story_section_container {
+  display: flex;
+  justify-content: center;
   background-color: var(--bg_primary_5);
+  border-radius: 20px;
 }
 
-/* Para */
-.__para {
-  margin-left: var(--para);
+.__story_container {
+  max-width: 800px;
+  width: 100%;
 }
-.__para_2 {
-  margin-left: var(--para_2);
-}
-.__para_3 {
-  margin-left: var(--para_3);
-}
-
-/* Margin */
-.__mb_0 {
-  margin-bottom: 0 !important;
-}
-.__fw_bold {
-  font-weight: 600;
-}
-.__fw_light {
-  font-weight: 100;
-}
-.__underline {
-  text-decoration-line: underline;
-}
-/* ------------------------------------------------------------------ */
 
 /*
   |----------------------------------------
-  | List style
+  | Story text : block
   |----------------------------------------
 */
-.__ul {
-  margin-bottom: var(--ul_mb);
+
+.__story_block {
+  margin-bottom: 1.5rem; /* Space between blocks */
 }
-.__list_style_circle {
+
+.__story_block.h1 {
+  font-size: var(--h1_fs);
+  font-weight: var(--h1_fw);
+  color: var(--color_highlight);
+}
+.__story_block.h2 {
+  font-size: var(--h2_fs);
+  font-weight: var(--h2_fw);
+  color: var(--color_highlight);
+}
+.__story_block.h3 {
+  font-size: var(--h3_fs);
+  font-weight: var(--h3_fw);
+}
+.__story_block.h4 {
+  font-size: var(--h4_fs);
+  font-weight: var(--h4_fw);
+}
+.__story_block.normal {
+  font-size: var(--normal_fs);
+  font-weight: var(--normal_fw);
+}
+
+/*
+  |----------------------------------------
+  | Story List : bullet
+  |----------------------------------------
+*/
+
+.__bullet_list {
   list-style-type: circle;
+  margin-left: 1.5rem;
+  padding-left: 0;
+}
+
+.__bullet_list::before {
+  content: var(--bullet_triangle_fill_right);
+  margin-right: 0.5rem;
+  font-size: var(--bullet_fs);
+  color: var(--color_highlight);
 }
 
 /*
   |----------------------------------------
-  | Colors
+  | Story Image
   |----------------------------------------
 */
-.__highlight {
-  color: var(--text_accent_3) !important;
+.__story_image {
+  margin-bottom: 1rem; /* Space below images */
+  text-align: center;
 }
-.__color_accent {
-  color: var(--text_accent_3) !important;
+
+.__story_image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/*
+  |----------------------------------------
+  | Story Caption and quote
+  |----------------------------------------
+*/
+.__image_caption {
+  font-size: 0.875rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+.__story_quote {
+  font-style: italic;
+  padding: 1rem;
+  border-left: 4px solid #ccc;
+  margin-bottom: 1rem;
+}
+
+.__story_list {
+  margin-bottom: 1rem;
+}
+
+.__story_embed {
+  margin-bottom: 1rem;
 }
 
 /*
@@ -145,72 +150,4 @@
   |----------------------------------------
 */
 
-@media only screen and (max-width: 800px) {
-  .__header,
-  .__header_1 {
-    font-size: var(--h1_fs_sm);
-  }
-  .__header_2 {
-    font-size: var(--h2_fs_sm);
-  }
-  .__header_3 {
-    font-size: var(--h3_fs_sm);
-  }
-
-  .__text {
-    font-size: var(--text_fs_sm);
-  }
-
-  .__text_lg {
-    font-size: var(--text_lg_fs_sm);
-  }
-
-  .__para {
-    margin-left: var(--para_sm);
-  }
-  .__para_2 {
-    margin-left: var(--para_2_sm);
-  }
-  .__para_3 {
-    margin-left: var(--para_3_sm);
-  }
-}
-
-/* New class */
-.story_section {
-  padding: 20px;
-}
-
-.story_section_container {
-  display: flex;
-  justify-content: center;
-}
-
-.__story_container {
-  max-width: 800px;
-  width: 100%;
-}
-
-.story-block {
-  margin-bottom: 1rem; /* Space between blocks */
-}
-
-.story-block.h2 {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.story-block.normal {
-  font-size: 1rem;
-}
-
-.bullet-list {
-  list-style-type: disc; /* Adjust bullet list style */
-  margin-left: 1.5rem; /* Adjust indentation */
-}
-
-.bullet-list::before {
-  content: "•"; /* Customize bullet style */
-  margin-right: 0.5rem;
-  color: #000;
-}
+/* @media only screen and (max-width: 800px) { } */
