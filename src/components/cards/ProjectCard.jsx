@@ -5,6 +5,7 @@ import { BiPlusCircle } from "react-icons/bi";
 
 // ... Context
 import { NavigationContext } from "@contexts/NavigationContextProvider";
+import { ProjectContext } from "@contexts/ProjectContextProvider.jsx";
 
 // ... Components
 
@@ -23,6 +24,10 @@ const ProjectCard = ({ project }) => {
     |----------------------------------------
   */
   const { toProjectDetailsPage } = useContext(NavigationContext);
+  const {
+    projectIdMap
+  } = useContext(ProjectContext);
+  console.log("projectIdMap : ", projectIdMap)
 
   // Extract variables from data (Project data)
   const project_category = project?.categories?.[0]?.title || "Category";

@@ -41,7 +41,8 @@ export const ProjectContext = createContext({
   loadPosts: () => {},
   project_is_loading: true,
   setProjectIsLoading: () => {},
-  projectIdMap: new Map(),
+  projectIdMap: {},
+  setProjectIdMap: () => {},
 });
 
 /*
@@ -70,7 +71,7 @@ const ProjectContextProvider = ({ children }) => {
   const [posts, setPosts] = useState([]);
   const [project_is_loading, setProjectIsLoading] = useState(true);
   const [projectTabs, setProjectTabs] = useState(["All"]);
-  const projectIdMap = new Map();
+  const [projectIdMap, setProjectIdMap] = useState({});
 
   /*
   |----------------------------------------
@@ -131,10 +132,7 @@ const ProjectContextProvider = ({ children }) => {
       if (project_id) {
         const buffer_id = Buffer.from(project_id).toString("base64");
         const short_id = buffer_id.substring(0, 8);
-
-        projectIdMap.set("project_id", project_id);
-        projectIdMap.set("buffer_id", buffer_id);
-        projectIdMap.set("short_id", short_id);
+        const idMap = { project_id: project_id, short_id: short_id };
       } else {
         console.info("Project ID is undefined.");
       }
@@ -201,6 +199,7 @@ const ProjectContextProvider = ({ children }) => {
     projectTabs,
     projects,
     projectIdMap,
+    setProjectIdMap,
   };
 
   /*
