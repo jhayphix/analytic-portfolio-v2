@@ -9,7 +9,7 @@ import { ProjectContext } from "@contexts/ProjectContextProvider.jsx";
 import PortfolioBreadCrumb from "@components/breadcrumb/PortfolioBreadCrumb";
 import DashboardStoryTab from "@components/tabs/DashboardStoryTab";
 import PageBannerSection from "@components/banners/PageBannerSection";
-// import ProjectBanner from "@components/banners/ProjectBanner";
+import DefaultSpinner from "@components/spinners/DefaultSpinner";
 
 import ProjectDashboardSection from "@pages/project_details_page/sections/ProjectDashboardSection";
 import StorySection from "@pages/project_details_page/sections/StorySection";
@@ -24,18 +24,18 @@ import StorySection from "@pages/project_details_page/sections/StorySection";
 const ProjectDetailsPage = () => {
   // Context
   const {
-    active_dashboard_story_tab, active_project, getProjectDetailsPramas
+    active_dashboard_story_tab,
+    active_project,
+    getProjectDetailsPramas,
+    project_is_loading,
   } = useContext(ProjectContext);
 
-
-
   // Set page params
-  const params = useParams()
+  const params = useParams();
   useEffect(() => {
-    getProjectDetailsPramas(params)
-  },[params, getProjectDetailsPramas])
+    getProjectDetailsPramas(params);
+  }, [params, getProjectDetailsPramas]);
 
-  
   const project_category = active_project?.categories?.[0]?.title || "Category";
   const project_title = active_project?.title || "Title";
 
@@ -46,7 +46,6 @@ const ProjectDetailsPage = () => {
   */
   return (
     <div className="container-lg" style={{ paddingBottom: "60px" }}>
-
       <PageBannerSection pageName={project_title} />
 
       <PortfolioBreadCrumb
@@ -56,10 +55,12 @@ const ProjectDetailsPage = () => {
 
       <DashboardStoryTab />
 
-      {active_dashboard_story_tab === "story" ? 
+      {project_is_loading ? (
+        <DefaultSpinner />
+      ) : active_dashboard_story_tab === "story" ? (
         <StorySection />
-       : (
-        <ProjectDashboardSection/>
+      ) : (
+        <ProjectDashboardSection />
       )}
     </div>
   );

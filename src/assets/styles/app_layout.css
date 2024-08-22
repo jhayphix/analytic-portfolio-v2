@@ -29,6 +29,8 @@ body {
   background-color: var(--bg_primary_1);
   scroll-behavior: smooth;
   overflow-x: hidden !important;
+  line-height: 1.5rem; /* 24px */
+  letter-spacing: 0.05rem; /* or use 0.05rem to 0.1rem if needed */
 }
 
 /* width */

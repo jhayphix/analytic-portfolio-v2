@@ -32,7 +32,6 @@ const ProjectCard = ({ project }) => {
   const project_title = project?.title || "Title";
   const project_type = project?.project_type || "Type";
 
-
   /*
     |----------------------------------------
     | Return

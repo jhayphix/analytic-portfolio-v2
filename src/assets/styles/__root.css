@@ -49,9 +49,8 @@
   --text_primary_6: #252d4d;
 
   /* Accent colors */
-  /* --text_accent_1: #4a6cf7; */
-  /* --text_accent_1: #1da1f2; */
-  --text_accent_1: #1d5df2;
+  /* --text_accent_1: #1d5df2; */
+  --text_accent_1: #4a7ef2;
   --text_accent_2: #2f449d;
   --text_accent_3: rgba(77, 157, 198);
 
@@ -153,7 +152,8 @@
   --text_secondary_1: #0a0e32;
 
   /* Accent */
-  --text_accent_1: #4a6cf7;
+  --text_accent_1: #4a7ef2;
+  --text_accent_3: rgba(27, 100, 136, 1);
 
   /* muted color */
   --text_muted_1: #959cb1;

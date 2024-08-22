@@ -1,5 +1,5 @@
 // ... React modules
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 // ... Context
 import { ProjectContext } from "@contexts/ProjectContextProvider.jsx";
@@ -16,8 +16,11 @@ import NavTab from "@components/tabs/NavTab";
 */
 const ProjectStoryTab = ({ story_tab, setCategory }) => {
   // Context
-  const { active_project_story_index, setActiveProjectStoryIndex } =
-    useContext(ProjectContext);
+  const {
+    active_project_story_index,
+    setActiveProjectStoryIndex,
+    setActiveProjectStoryTab,
+  } = useContext(ProjectContext);
 
   const handleTabClick = (index, category) => {
     setActiveProjectStoryIndex(index);
@@ -25,6 +28,12 @@ const ProjectStoryTab = ({ story_tab, setCategory }) => {
   };
 
   const tabs = story_tab;
+
+  const first_project_story_tab_name = tabs?.[0]?.toLowerCase();
+
+  useEffect(() => {
+    setActiveProjectStoryTab(first_project_story_tab_name)
+  }, [setActiveProjectStoryTab, first_project_story_tab_name])
 
   /*
   |----------------------------------------

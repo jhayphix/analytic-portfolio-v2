@@ -1,0 +1,185 @@
+// StorySection.jsx
+
+import React, { useContext } from "react";
+import { ProjectContext } from "@contexts/ProjectContextProvider.jsx";
+import ProjectStoryTab from "@components/tabs/ProjectStoryTab";
+
+// Display the marks as classes
+const renderMarks = (marks) => {
+  const markClasses = {
+    strong: "__text_strong",
+    em: "__text_italic",
+    underline: "__text_underline",
+    highlight: "__text_highlight", // Add additional classes if needed
+  };
+
+  return marks?.map((mark) => markClasses[mark] || "").join(" ");
+};
+
+const StorySection = () => {
+  // Contents
+  const { active_project, active_project_story_tab, setActiveProjectStoryTab } =
+    useContext(ProjectContext);
+
+  // Project Variables
+  const project_stories = active_project?.stories;
+  const all_story_tabs = project_stories?.map((item) => item?.tab);
+
+  // Get the active project story
+  const filtered_story = project_stories?.find(
+    (story) =>
+      story?.tab?.toLowerCase() === active_project_story_tab?.toLowerCase()
+  );
+
+  // Get the content of the story
+  const filtered_story_content = filtered_story?.content || [];
+
+  const picked_story = filtered_story_content?.slice(11, 14);
+  console.log(picked_story);
+
+  return (
+    <div className="__story_section">
+      <ProjectStoryTab
+        story_tab={all_story_tabs}
+        setCategory={setActiveProjectStoryTab}
+      />
+
+      <div className="__story_section_container py-5">
+        <div className="__story_container">
+          {filtered_story_content.length > 0 ? (
+            filtered_story_content.map((story, index) => {
+              const { _type, style, children, listItem, asset, alt, caption } =
+                story;
+
+              switch (_type) {
+                case "block":
+                  if (style === "code" && children) {
+                    return (
+                      <div className="__code_content" key={index}>
+                        {children?.map((child) => (
+                          <span
+                            className={renderMarks(child.marks)}
+                            key={child._key}
+                          >
+                            {child.text}
+                          </span>
+                        ))}
+                      </div>
+                    );
+                  } else {
+                    return (
+                      <div
+                        key={index}
+                        className={`__story_block ${style} ${
+                          listItem === "bullet" ? "__list_bullet" : ""
+                        } ${listItem === "number" ? "__list_number" : ""}`}
+                      >
+                        {children &&
+                          children?.map((child) => (
+                            <span
+                              key={child._key}
+                              className={renderMarks(child.marks)}
+                            >
+                              {child.text}
+                            </span>
+                          ))}
+                      </div>
+                    );
+                  }
+
+                case "image":
+                  return (
+                    <div key={index} className="__story_image">
+                      <img src={asset?._ref} alt={alt || "Story image"} />
+                      {caption && <p className="__image_caption">{caption}</p>}
+                    </div>
+                  );
+
+                case "quote":
+                  return (
+                    <blockquote key={index} className="__story_quote">
+                      {children &&
+                        children.map((child) => (
+                          <span
+                            key={child._key}
+                            className={renderMarks(child.marks)}
+                          >
+                            {child.text}
+                          </span>
+                        ))}
+                    </blockquote>
+                  );
+
+                case "list":
+                  return (
+                    <ul
+                      key={index}
+                      className={`__story_list ${
+                        listItem === "bullet" ? "__list_bullet" : ""
+                      }`}
+                    >
+                      {children.map((child, idx) => (
+                        <li key={idx}>{child.text}</li>
+                      ))}
+                    </ul>
+                  );
+
+                case "embed":
+                  return (
+                    <div
+                      key={index}
+                      className="__story_embed"
+                      dangerouslySetInnerHTML={{ __html: story.url }}
+                    />
+                  );
+
+                default:
+                  return null;
+              }
+            })
+          ) : (
+            <div>Story is currently unavailable...</div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default StorySection;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+if (markDefs?.[0]?._type === "link" && children) {
+                      <LinkContent
+                        index={index}
+                        style={style}
+                        children={children}
+                        renderMarks={renderMarks}
+                      />;
+                    } else {
+                      <BlockContent
+                        index={index}
+                        style={style}
+                        listItem={listItem}
+                        children={children}
+                        renderMarks={renderMarks}
+                      />;
+                    }
