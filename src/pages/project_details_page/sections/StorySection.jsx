@@ -40,9 +40,6 @@ const StorySection = () => {
   // Get the content of the story
   const filtered_story_content = filtered_story?.content || [];
 
-  const picked_story = filtered_story_content?.slice(20);
-  console.log(picked_story)
-
   return (
     <div className="__story_section">
       <ProjectStoryTab
@@ -63,6 +60,8 @@ const StorySection = () => {
                 alt,
                 caption,
                 markDefs,
+                crop,
+                hotspot,
               } = story;
 
               switch (_type) {
@@ -72,36 +71,41 @@ const StorySection = () => {
                       {/* All the markdefs what has link */}
                       {markDefs?.map((item) => item?._type).includes("link") &&
                       children ? (
-                        <LinkContent
-                          key={index}
-                          index={index}
-                          style={style}
-                          children={children}
-                          renderMarks={renderMarks}
-                          markDefs={markDefs}
-                        />
+                        <div key={index}>
+                          <LinkContent
+                            index={index}
+                            style={style}
+                            children={children}
+                            renderMarks={renderMarks}
+                            markDefs={markDefs}
+                          />
+                        </div>
                       ) : (
-                        <BlockContent
-                          key={index}
-                          index={index}
-                          style={style}
-                          listItem={listItem}
-                          children={children}
-                          renderMarks={renderMarks}
-                        />
+                        <div key={index}>
+                          <BlockContent
+                            index={index}
+                            style={style}
+                            listItem={listItem}
+                            children={children}
+                            renderMarks={renderMarks}
+                          />
+                        </div>
                       )}
                     </>
                   );
 
                 case "image":
                   return (
-                    <ImageContent
-                      key={index}
-                      index={index}
-                      asset={asset}
-                      alt={alt}
-                      caption={caption}
-                    />
+                    <div key={asset?._key}>
+                      <ImageContent
+                        index={index}
+                        asset={asset}
+                        alt={alt}
+                        caption={caption}
+                        crop={crop}
+                        hotspot={hotspot}
+                      />
+                    </div>
                   );
                 default:
                   return null;

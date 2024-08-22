@@ -1,11 +1,10 @@
-const LinkContent = ({ index, style, children, renderMarks, markDefs }) => {
+const LinkContent = ({ style, children, renderMarks, markDefs }) => {
   const linkMarkDefs = markDefs?.find((item) => item?._type === "link");
 
   const href = linkMarkDefs?.href;
 
   return (
     <a
-      key={index}
       className={`__story_block ${style} __link
           `}
       href={href}

@@ -1,7 +1,6 @@
-const BlockContent = ({ index, style, listItem, children, renderMarks }) => {
+const BlockContent = ({ style, listItem, children, renderMarks }) => {
   return (
     <div
-      key={index}
       className={`__story_block ${style} ${
         listItem === "bullet" ? "__list_bullet" : ""
       } ${listItem === "number" ? "__list_number" : ""} 

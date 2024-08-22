@@ -75,7 +75,11 @@ const ProjectCard = ({ project }) => {
             <div className="w-like">
               <Link
                 className="plus_link"
-                to={toProjectDetailsPage(project_category, project_slug, project_id)}
+                to={toProjectDetailsPage(
+                  project_category,
+                  project_slug,
+                  project_id
+                )}
                 rel="noreferrer"
               >
                 {" "}
