@@ -9,19 +9,41 @@ Minor Changes:
 
     ✔ Work on pages @done(24-08-23 09:01)
 
-    Rename of tabs and categories @ProjectContextProvider:
+    ✔ Rename of tabs and categories @ProjectContextProvider: @done(24-08-23 10:36)
 
-    Render project content from profile context instead of from _db @ProfileContextProvider:
-        ☐ @Home
+
+    ✔ Work on bread crumb click on project the category should be "all" @BreadCrumb: @done(24-08-23 11:00)
+
+    ✔ Work on Mobile responsive: @done(24-08-23 11:00)
+
+    Render project content from profile context instead of from _db :
+        ✔ Work on @ProfileContextProvider @started(24-08-23 16:21) @done(24-08-23 16:37) @lasted(16m4s)
+            ✔ Create @ProfileContextProvider @done(24-08-23 16:36)
+            ✔ Add it to @AppContextProvider @done(24-08-23 16:36)
+        ☐ Work on @profile_db.js
+            ☐ Serve it in context
+            ☐ Check if reference, then return it from context
+        ☐ Work on @sevice_db.js
+            ☐ Serve it in context
+            ☐ Check if reference, then return it from context
+        ☐ Work on @stat_db.js
+            ☐ Serve it in context
+            ☐ Check if reference, then return it from context
         ☐ @ContactCard
-        ☐ Rename @DashboardStoryTab to @DashboardAndStoryTab
+        ✔ Rename @DashboardStoryTab to @DashboardAndStoryTab @done(24-08-23 16:13)
+    
+    Configure Quokka Extension:
+        ☐ Read on it
+        ☐ Configure
 
+    Work on theme:
+        ☐ Theme base on system
 
-    Work on bread crumb click on project the category should be "all" @BreadCrumb:
-
-    Work on Mobile responsive:
-
-    Create a favicon:
+    Create a Logo:
+        ☐ Create a logo
+        ☐ Learn how to use it on website
+        ☐ Create favicon
+        ☐ Use it on website
 
     Check if any console warning:
 
@@ -29,9 +51,11 @@ Hosting:
     Rehost using github pages @high:
     Host on vercel @high:
 
-@low Other Fix:
+Future Fix: 
     Work on contact form:
         ☐ Use form spray
+    Reference other websites:
+        ☐ @https://overwatch-coder.vercel.app/
 
 
 

@@ -1,4 +1,4 @@
-// Refrence from this context
+// Refrence to this context
 // import { DefaultContext } from "@contexts/DefaultContextProvider.jsx";
 // const { portrait_img } = useContext(DefaultContext);
 

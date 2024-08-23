@@ -30,9 +30,9 @@
   | Layout
   |----------------------------------------
 */
-.__story_section {
-  padding: 1.25rem;
-}
+/* .__story_section {
+  
+} */
 
 .__story_section_container {
   display: flex;
@@ -198,4 +198,14 @@
   |----------------------------------------
 */
 
-/* @media only screen and (max-width: 800px) { } */
+@media only screen and (max-width: 800px) { 
+  .__story_block.h1 {
+    text-align: center;
+  }
+  .__story_block.h2 {
+    text-align: center;
+  }
+  .__story_section_container {
+    padding: 0 0.5rem;
+  }
+ }

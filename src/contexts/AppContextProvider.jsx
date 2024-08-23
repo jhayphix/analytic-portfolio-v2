@@ -1,10 +1,11 @@
 // ... React modules
 
 // ... Contexts
+import DefaultContextProvider from "@contexts/DefaultContextProvider";
+import NavigationContextProvider from "@contexts/NavigationContextProvider";
+import ProfileContextProvider from "@contexts/ProfileContextProvider";
 import ProjectContextProvider from "@contexts/ProjectContextProvider";
 import ThemeContextProvider from "@contexts/ThemeContextProvider";
-import NavigationContextProvider from "@contexts/NavigationContextProvider";
-import DefaultContextProvider from "@contexts/DefaultContextProvider.jsx";
 
 // ... Components
 
@@ -31,9 +32,11 @@ const AppContextProvider = ({ children }) => {
     <>
       <ThemeContextProvider>
         <NavigationContextProvider>
-          <DefaultContextProvider>
-            <ProjectContextProvider>{children}</ProjectContextProvider>
-          </DefaultContextProvider>
+          <ProfileContextProvider>
+            <DefaultContextProvider>
+              <ProjectContextProvider>{children}</ProjectContextProvider>
+            </DefaultContextProvider>
+          </ProfileContextProvider>
         </NavigationContextProvider>
       </ThemeContextProvider>
     </>
