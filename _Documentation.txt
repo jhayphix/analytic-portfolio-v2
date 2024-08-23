@@ -30,7 +30,9 @@ To Delete
 To Do
     Delete unecessary files
     Work on default pictures
-    Work on navigations in other js instead of the content
+    Work on rename of tabs and categories
+    Work on profile context, all other db under one watch
+    Work on navigations in other js instead of the context
     Work on warning on Each child should have a kind : Page => Story section
     Work on bread crumb click no project the category should be all
         Or handle active category click in the url

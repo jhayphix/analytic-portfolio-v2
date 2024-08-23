@@ -10,7 +10,6 @@ import { NavigationContext } from "@contexts/NavigationContextProvider";
 
 // ... Assets
 import { fetchPosts, fetchProjectCategories } from "@src/config.js";
-import { dashboard_story_tabs } from "@data/tab_db";
 
 export const ProjectContext = createContext({
   activeTab: "",
@@ -31,7 +30,6 @@ export const ProjectContext = createContext({
   changeProjectCategory: () => {},
 
   projectTabs: [],
-  dashboard_story_tabs: [],
   handleTabClick: () => {},
   projects: [],
   filteredProjects: [],
@@ -63,6 +61,7 @@ const ProjectContextProvider = ({ children }) => {
   */
   // Base config
   const navigate = useNavigate();
+  const dashboard_story_tabs = ["Dashboard", "Story"];
 
   // Set states
   const [active_project, setActiveProject] = useState({});

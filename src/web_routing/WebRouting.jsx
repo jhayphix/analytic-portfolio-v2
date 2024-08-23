@@ -32,22 +32,22 @@ const WebRouting = () => {
   return (
     <Routes>
       {/* Homepage */}
-      <Route path={home.path} element={<HomePage />} />
+      <Route path={home?.path} element={<HomePage />} />
 
       {/* About page */}
-      <Route path={about.path} element={<AboutPage />} />
+      <Route path={about?.path} element={<AboutPage />} />
 
       {/* Portfolio page */}
-      <Route path={portfolio.path} element={<PortfolioPage />} />
+      <Route path={portfolio?.path} element={<PortfolioPage />} />
 
       {/* Services page */}
-      <Route path={service.path} element={<ServicePage />} />
+      <Route path={service?.path} element={<ServicePage />} />
 
       {/* Contact page */}
-      <Route path={contact.path} element={<ContactPage />} />
+      <Route path={contact?.path} element={<ContactPage />} />
 
       {/* Dashboard page */}
-      <Route path={dashboard.path} element={<ProjectDetailsPage />} />
+      <Route path={dashboard?.path} element={<ProjectDetailsPage />} />
 
       {/* Not found */}
       <Route path="*" element="Not Found" />
