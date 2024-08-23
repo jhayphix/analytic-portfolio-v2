@@ -24,8 +24,18 @@ Project Details Page : Display details and contents of a project
 To Delete
     All project context
 
-Work on Short url
-Work on images, croped , reference
+
+
+
+To Do
+    Delete unecessary files
+    Work on default pictures
+    Work on navigations in other js instead of the content
+    Work on warning on Each child should have a kind : Page => Story section
+    Work on bread crumb click no project the category should be all
+        Or handle active category click in the url
+
+
 
 
 

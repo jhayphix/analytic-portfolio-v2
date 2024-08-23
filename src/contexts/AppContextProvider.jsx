@@ -4,8 +4,6 @@
 import ProjectContextProvider from "@contexts/ProjectContextProvider";
 import ThemeContextProvider from "@contexts/ThemeContextProvider";
 import NavigationContextProvider from "@contexts/NavigationContextProvider";
-
-import ProjectProvider from "@contexts/projects/ProjectProvider.jsx";
 import DefaultContextProvider from "@contexts/DefaultContextProvider.jsx";
 
 // ... Components
@@ -34,11 +32,7 @@ const AppContextProvider = ({ children }) => {
       <ThemeContextProvider>
         <NavigationContextProvider>
           <DefaultContextProvider>
-            <ProjectContextProvider>
-              <ProjectProvider>
-                  {children}
-              </ProjectProvider>
-            </ProjectContextProvider>
+            <ProjectContextProvider>{children}</ProjectContextProvider>
           </DefaultContextProvider>
         </NavigationContextProvider>
       </ThemeContextProvider>

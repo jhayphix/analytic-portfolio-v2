@@ -1,8 +1,10 @@
 // ... React modules
-import { createContext, useState, useEffect } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Buffer } from "buffer";
 
 // ... Context
+import { NavigationContext } from "@contexts/NavigationContextProvider";
 
 // ... Components
 
@@ -34,8 +36,6 @@ export const ProjectContext = createContext({
   projects: [],
   filteredProjects: [],
 
-  getProjectDetailsPramas: () => {},
-
   posts: [],
   setPosts: () => {},
   loadPosts: () => {},
@@ -43,6 +43,8 @@ export const ProjectContext = createContext({
   setProjectIsLoading: () => {},
   projectIdMap: {},
   setProjectIdMap: () => {},
+  projectDetailPageParams: {},
+  setProjectDetailPageParams: () => {},
 });
 
 /*
@@ -51,11 +53,17 @@ export const ProjectContext = createContext({
   |----------------------------------------------------------------------------
 */
 const ProjectContextProvider = ({ children }) => {
+  // Context
+  const { projectDetailsURL } = useContext(NavigationContext);
+
   /*
   |----------------------------------------
   | Project config
   |----------------------------------------
   */
+  // Base config
+  const navigate = useNavigate();
+
   // Set states
   const [active_project, setActiveProject] = useState({});
   const [activeTab, setActiveTab] = useState(0);
@@ -72,6 +80,7 @@ const ProjectContextProvider = ({ children }) => {
   const [project_is_loading, setProjectIsLoading] = useState(true);
   const [projectTabs, setProjectTabs] = useState(["All"]);
   const [projectIdMap, setProjectIdMap] = useState({});
+  const [projectDetailPageParams, setProjectDetailPageParams] = useState({});
 
   /*
   |----------------------------------------
@@ -116,29 +125,46 @@ const ProjectContextProvider = ({ children }) => {
           )
         );
 
-  // Get active project
-  const getProjectDetailsPramas = (params) => {
-    const active_project_id = params?.id;
+  /*
+  |----------------------------------------
+  | Working with short url
+  |----------------------------------------
+  */
+  const generateShortId = (projectId) => {
+    const bufferId = Buffer.from(projectId).toString("base64");
+    return bufferId.substring(0, 8);
+  };
 
-    if (active_project_id) {
-      const filtered_active_project = projects?.find(
-        (project) => project?._id === active_project_id
+  // On initial load or when projects change, create the projectIdMap
+  useEffect(() => {
+    const map = {};
+    projects?.forEach((project) => {
+      const shortId = generateShortId(project?._id);
+      map[shortId] = project._id;
+    });
+    setProjectIdMap(map);
+  }, [projects]);
+
+  // Set the active project based on the short_id
+  useEffect(() => {
+    const short_id = projectDetailPageParams?.id;
+    if (short_id && projectIdMap?.[short_id]) {
+      const originalProjectId = projectIdMap?.[short_id];
+      const project = projects?.find(
+        (project) => project?._id === originalProjectId
       );
-      setActiveProject(filtered_active_project);
-
-      // Getting the project id and making it shorter by buffer
-      const project_id = filtered_active_project?._id;
-
-      if (project_id) {
-        const buffer_id = Buffer.from(project_id).toString("base64");
-        const short_id = buffer_id.substring(0, 8);
-        const idMap = { project_id: project_id, short_id: short_id };
-      } else {
-        console.info("Project ID is undefined.");
-      }
-    } else {
-      console.info("Active project ID is undefined.");
+      setActiveProject(project);
     }
+  }, [projectDetailPageParams?.id, projectIdMap, projects]);
+
+  const handleProjectClick = (project) => {
+    const project_category = project?.categories?.[0]?.title || "Category";
+    const project_slug = project?.slug?.current || "slug";
+    const project_id = project?._id || "";
+
+    const shortId = generateShortId(project_id);
+    navigate(projectDetailsURL(project_category, project_slug, shortId));
+    setActiveProject(project);
   };
 
   /*
@@ -189,17 +215,24 @@ const ProjectContextProvider = ({ children }) => {
     changeProjectCategory,
     dashboard_story_tabs,
     filteredProjects,
-    getProjectDetailsPramas,
+
+    generateShortId,
     handleTabClick,
+    handleProjectClick,
+    navigate,
+
     posts,
     setPosts,
     loadPosts,
+
     project_is_loading,
     setProjectIsLoading,
     projectTabs,
     projects,
     projectIdMap,
     setProjectIdMap,
+    projectDetailPageParams,
+    setProjectDetailPageParams,
   };
 
   /*

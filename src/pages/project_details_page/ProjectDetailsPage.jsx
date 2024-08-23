@@ -26,15 +26,15 @@ const ProjectDetailsPage = () => {
   const {
     active_dashboard_story_tab,
     active_project,
-    getProjectDetailsPramas,
     project_is_loading,
+    setProjectDetailPageParams,
   } = useContext(ProjectContext);
 
   // Set page params
   const params = useParams();
   useEffect(() => {
-    getProjectDetailsPramas(params);
-  }, [params, getProjectDetailsPramas]);
+    setProjectDetailPageParams(params);
+  }, [params, setProjectDetailPageParams]);
 
   const project_category = active_project?.categories?.[0]?.title || "Category";
   const project_title = active_project?.title || "Title";

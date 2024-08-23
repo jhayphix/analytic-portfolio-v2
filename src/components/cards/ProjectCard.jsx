@@ -1,10 +1,8 @@
 // ... React modules
 import { useContext } from "react";
-import { Link } from "react-router-dom";
 import { BiPlusCircle } from "react-icons/bi";
 
 // ... Context
-import { NavigationContext } from "@contexts/NavigationContextProvider";
 import { ProjectContext } from "@contexts/ProjectContextProvider.jsx";
 
 // ... Components
@@ -23,17 +21,11 @@ const ProjectCard = ({ project }) => {
     | Context and variable extration
     |----------------------------------------
   */
-  const { toProjectDetailsPage } = useContext(NavigationContext);
-  const {
-    projectIdMap
-  } = useContext(ProjectContext);
-  console.log("projectIdMap : ", projectIdMap)
+  const { handleProjectClick } = useContext(ProjectContext);
 
   // Extract variables from data (Project data)
   const project_category = project?.categories?.[0]?.title || "Category";
-  const project_id = project?._id || "";
   const project_main_image = project?.main_image?.asset?.url || "";
-  const project_slug = project?.slug?.current || "slug";
   const project_title = project?.title || "Title";
   const project_type = project?.project_type || "Type";
 
@@ -45,11 +37,11 @@ const ProjectCard = ({ project }) => {
   return (
     <div className="work-box">
       {/* Image */}
-      <Link
-        to={toProjectDetailsPage(project_category, project_slug, project_id)}
+      <div
+        onClick={() => handleProjectClick(project)}
         data-gallery="portfolioGallery"
-        className="portfolio-lightbox"
-        rel="noreferrer"
+        className="portfolio-lightbox cursor_pointer"
+        role="link"
       >
         <div className="work-img">
           <img
@@ -62,7 +54,7 @@ const ProjectCard = ({ project }) => {
             }}
           />
         </div>
-      </Link>
+      </div>
 
       {/* Work content */}
       <div className="work-content">
@@ -78,18 +70,14 @@ const ProjectCard = ({ project }) => {
           </div>
           <div className="col-sm-3">
             <div className="w-like">
-              <Link
-                className="plus_link"
-                to={toProjectDetailsPage(
-                  project_category,
-                  project_slug,
-                  project_id
-                )}
-                rel="noreferrer"
+              <div
+                className="plus_link cursor_pointer"
+                onClick={() => handleProjectClick(project)}
+                role="link"
               >
                 {" "}
                 <BiPlusCircle className="plus_icon" />
-              </Link>
+              </div>
             </div>
           </div>
         </div>
