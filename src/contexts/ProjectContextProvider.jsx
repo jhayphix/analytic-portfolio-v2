@@ -54,14 +54,15 @@ export const ProjectContext = createContext({
   |----------------------------------------------------------------------------
 */
 const ProjectContextProvider = ({ children }) => {
-  // Context
-  const { projectDetailsURL } = useContext(NavigationContext);
-
   /*
   |----------------------------------------
   | Project config
   |----------------------------------------
   */
+
+  // Context
+  const { projectDetailsURL } = useContext(NavigationContext);
+
   // Base config
   const navigate = useNavigate();
   const dashboard_and_story_tab = ["Dashboard", "Story"];
@@ -177,7 +178,6 @@ const ProjectContextProvider = ({ children }) => {
   |----------------------------------------
   */
   // Get the tab which is clicked's index and category
-  
 
   // Change selected project category (eg. Excel) when different tab is clicked
   const changeProjectCategory = (active_project_tab_name) => {
