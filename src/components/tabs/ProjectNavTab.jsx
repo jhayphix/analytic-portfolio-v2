@@ -15,8 +15,7 @@ import NavTab from "@components/tabs/NavTab";
   |----------------------------------------------------------------------------
 */
 const ProjectNavTab = () => {
-  const { activeTab, projectTabs, handleTabClick } =
-    useContext(ProjectContext);
+  const { activeTab, projectTabs, handleTabClick } = useContext(ProjectContext);
 
   /*
   |----------------------------------------

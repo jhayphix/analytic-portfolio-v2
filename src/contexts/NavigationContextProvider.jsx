@@ -6,8 +6,7 @@ import { createContext } from "react";
 // ... Components
 
 // ... Assets
-import { navigation_db } from "@data/navigation_db";
-import { mobile_navigation_db } from "@data/navigation_db";
+import navigation_db from "@data/navigation_db";
 
 /*
 |----------------------------------------------------------------------------
@@ -33,16 +32,19 @@ const NavigationContextProvider = ({ children }) => {
   | Assign
   |----------------------------------------
   */
+
+  // New db
   const base_route = navigation_db?.base_route;
-  const nav_links = navigation_db?.nav_links;
-  const mobile_nav_links = mobile_navigation_db?.nav_links;
 
   const home = navigation_db?.home;
   const about = navigation_db?.about;
   const portfolio = navigation_db?.portfolio;
-  const dashboard = navigation_db?.dashboard;
+  const dashboard = navigation_db?.project;
   const service = navigation_db?.service;
   const contact = navigation_db?.contact;
+
+  const nav_links = [home, portfolio, about, service, contact];
+  const mobile_nav_links = [portfolio, home, contact];
 
   /*
   |----------------------------------------
@@ -50,7 +52,7 @@ const NavigationContextProvider = ({ children }) => {
   |----------------------------------------
   */
   const projectDetailsURL = (category, slug, id) => {
-    const path = `/${base_route}/project/${category}/${slug}/${id}`;
+    const path = `${base_route}/project/${category}/${slug}/${id}`;
     return path;
   };
 

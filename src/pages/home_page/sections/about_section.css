@@ -4,11 +4,11 @@
   |------------------------------------------------
 */
 
-#about_section {
+#about-section {
   min-height: 100vh;
 }
 
-#about_section #profile_info {
+#about-section #profile_info {
   padding: 1rem;
   background: var(--bg_about_card_1);
   box-shadow: var(--shadow_about_card);

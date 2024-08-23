@@ -1,12 +1,13 @@
 // ... React modules
+import { useContext } from "react";
 
 // ... Context
+import { DefaultContext } from "@contexts/DefaultContextProvider.jsx";
 
 // ... Components
 
 // ... Assets
 import my_profile from "@data/profile_db";
-import Portrait from "@assets/images/portrait/avatar_dark.png";
 
 /*
   |----------------------------------------------------------------------------
@@ -15,6 +16,8 @@ import Portrait from "@assets/images/portrait/avatar_dark.png";
 */
 
 const AboutProfileSection = () => {
+  const { portrait_img } = useContext(DefaultContext);
+
   /*
     |----------------------------------------
     | Return
@@ -30,7 +33,7 @@ const AboutProfileSection = () => {
             style={{ height: "200px", width: "240px" }}
           >
             <img
-              src={Portrait}
+              src={portrait_img}
               className="img-fluid rounded"
               alt="Jhayphix Ablordeppey Samuel"
               style={{ borderRadius: "50px", height: "100%", width: "100%" }}

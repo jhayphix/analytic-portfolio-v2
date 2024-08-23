@@ -24,4 +24,5 @@ yarn-debug.log*
 yarn-error.log*
 
 # Other
-/Todo.todo
+# /_Todo.todo
+# /_TodoRef.todo

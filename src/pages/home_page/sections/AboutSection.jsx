@@ -23,7 +23,7 @@ const AboutSection = () => {
   */
   return (
     <>
-      <section id="about_section" className="bg_primary_2 bg_shape_grp_2 py-5">
+      <section id="about-section" className="bg_primary_2 bg_shape_grp_2 py-5">
         <div className="container-lg">
           <div className="row gap-3 justify-content-center">
             {/* Profile */}

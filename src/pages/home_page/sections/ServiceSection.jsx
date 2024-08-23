@@ -22,7 +22,7 @@ const ServiceSection = ({ showHeader }) => {
     |----------------------------------------
   */
   return (
-    <section id="service_section" className="bg_shape_grp_4 py-5">
+    <section id="service-section" className="bg_shape_grp_4 py-5">
       <div className="container-lg">
         {showHeader ? (
           <SectionHeader

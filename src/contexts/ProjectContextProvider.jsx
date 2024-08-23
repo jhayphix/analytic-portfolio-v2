@@ -1,3 +1,7 @@
+// Use this context
+// import { ProjectContext } from "@contexts/ProjectContextProvider.jsx";
+// const { handleProjectClick } = useContext(ProjectContext);
+
 // ... React modules
 import { createContext, useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";

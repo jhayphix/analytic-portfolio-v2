@@ -15,12 +15,12 @@ import { ProjectContext } from "@contexts/ProjectContextProvider.jsx";
   |----------------------------------------------------------------------------
 */
 const DefaultDashboardSection = () => {
-  const { def_dashboard_img_2 } = useContext(DefaultContext);
+  const { def_project_img_2 } = useContext(DefaultContext);
 
-  const {active_project} = useContext(ProjectContext);
+  const { active_project } = useContext(ProjectContext);
 
-  
-  const project_main_image = active_project?.main_image?.asset?.url || def_dashboard_img_2;
+  const project_main_image =
+    active_project?.main_image?.asset?.url || def_project_img_2;
 
   /*
   |----------------------------------------
@@ -32,13 +32,11 @@ const DefaultDashboardSection = () => {
       <div className="project_details_section">
         <img
           className="dashboard_img"
-          src={
-            project_main_image
-          }
+          src={project_main_image}
           alt={"Project name"}
           onError={(e) => {
             e.target.onerror = null; // Prevents infinite loop if the default image fails
-            e.target.src = def_dashboard_img_2; // Set the default image on error
+            e.target.src = def_project_img_2; // Set the default image on error
           }}
         />
       </div>

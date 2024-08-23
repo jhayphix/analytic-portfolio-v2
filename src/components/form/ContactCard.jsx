@@ -1,5 +1,4 @@
 // ... React modules
-import { Link } from "react-router-dom";
 import {
   FaWhatsapp,
   FaTwitter,
@@ -67,42 +66,42 @@ const ContactCard = () => {
         {/*  */}
         <div className="card-footer bg_primary_2 text-center">
           <div className="contact_social_icons_container">
-            <Link
-              to="https://wa.me/233248359918?text=Hello Jhay, I need your service!!"
+            <a
+              href="https://wa.me/233248359918?text=Hello Jhay, I need your service!!"
               target="_blank"
               rel="noreferrer"
               className="social_link text_whatsapp"
             >
               <FaWhatsapp className="social_icon" />
-            </Link>
+            </a>
 
-            <Link
-              to="https://wa.me/233248359918?text=Hello Jhay, I need your service!!"
+            <a
+              href="https://wa.me/233248359918?text=Hello Jhay, I need your service!!"
               target="_blank"
               rel="noreferrer"
               className="social_link text_twitter"
             >
               <FaTwitter className="social_icon" />
-            </Link>
+            </a>
 
-            <Link
-              to="https://github.com/jhayphix"
+            <a
+              href="https://github.com/jhayphix"
               target="_blank"
               rel="noreferrer"
               className="social_link text_secondary_1"
             >
               <FaGithub className="social_icon" />
-            </Link>
+            </a>
 
-            <Link
-              to="https://wa.me/233248359918?text=Hello Jhay, I need your service!!"
+            <a
+              href="https://wa.me/233248359918?text=Hello Jhay, I need your service!!"
               target="_blank"
               rel="noreferrer"
               // className="social_link text_primary_color_1"
               className="social_link text_facebook"
             >
               <FaFacebook className="social_icon" />
-            </Link>
+            </a>
           </div>
         </div>
       </div>

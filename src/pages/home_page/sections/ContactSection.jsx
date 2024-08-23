@@ -28,10 +28,13 @@ const ContactSection = ({ showHeader }) => {
   const sectionSubTitle =
     "Questions to ask? Contact me directly by filling out the form";
   return (
-    <section id="contact_section" className="bg_primary_1 py-5 bg_shape_grp_6">
+    <section id="contact-section" className="bg_primary_1 py-5 bg_shape_grp_6">
       <div className="container-lg">
-        {showHeader ? (<SectionHeader title={sectionTitle} subTitle={sectionSubTitle} />) : <SectionSubText subText="Questions to ask? Contact me directly by filling out the form" />}
-        
+        {showHeader ? (
+          <SectionHeader title={sectionTitle} subTitle={sectionSubTitle} />
+        ) : (
+          <SectionSubText subText="Questions to ask? Contact me directly by filling out the form" />
+        )}
 
         <div className="row my-5 gap-lg-0 gap-3 justify-content-lg-start justify-content-center">
           {/* Contact Form */}

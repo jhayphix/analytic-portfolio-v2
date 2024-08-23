@@ -4,11 +4,11 @@ import { BiPlusCircle } from "react-icons/bi";
 
 // ... Context
 import { ProjectContext } from "@contexts/ProjectContextProvider.jsx";
+import { DefaultContext } from "@contexts/DefaultContextProvider.jsx";
 
 // ... Components
 
 // ... Assets
-import DefDashboardImg1 from "@assets/images/projects/default_dashboard/dashboard_img_1.png";
 
 /*
   |----------------------------------------------------------------------------
@@ -16,12 +16,9 @@ import DefDashboardImg1 from "@assets/images/projects/default_dashboard/dashboar
   |----------------------------------------------------------------------------
 */
 const ProjectCard = ({ project }) => {
-  /*
-    |----------------------------------------
-    | Context and variable extration
-    |----------------------------------------
-  */
+  // Context
   const { handleProjectClick } = useContext(ProjectContext);
+  const { def_project_img_1 } = useContext(DefaultContext);
 
   // Extract variables from data (Project data)
   const project_category = project?.categories?.[0]?.title || "Category";
@@ -45,12 +42,12 @@ const ProjectCard = ({ project }) => {
       >
         <div className="work-img">
           <img
-            src={project_main_image || DefDashboardImg1}
+            src={project_main_image || def_project_img_1}
             alt={project_title}
             className="img-fluid"
             onError={(e) => {
               e.target.onerror = null; // Prevents infinite loop if the default image fails
-              e.target.src = DefDashboardImg1; // Set the default image on error
+              e.target.src = def_project_img_1; // Set the default image on error
             }}
           />
         </div>
@@ -85,14 +82,4 @@ const ProjectCard = ({ project }) => {
     </div>
   );
 };
-
-ProjectCard.defaultProps = [
-  {
-    id: "default",
-    name: "Bike sales",
-    img: DefDashboardImg1,
-    category: "excel",
-    type: "Personal",
-  },
-];
 export default ProjectCard;

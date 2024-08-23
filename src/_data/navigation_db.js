@@ -6,99 +6,47 @@ import { FaHome, FaBriefcase, FaEnvelope } from "react-icons/fa";
   |----------------------------------------
 */
 
-const base_route = "analytic-portfolio";
-export const navigation_db = {
-  base_route: base_route,
-  nav_links: [
-    {
-      name: "Home",
-      path: `${base_route}/`,
-      end: true,
-    },
-    {
-      name: "Projects",
-      path: `${base_route}/portfolio`,
-      end: false,
-    },
-    
-    {
-      name: "About",
-      path: `${base_route}/about`,
-      end: false,
-    },
-    // Commented out but active. Uncomment to have a look
-    // {
-    //   name: "Services",
-    //   path: `${base_route}/services`,
-    //   end: false,
-    // },
-    {
-      name: "Contact",
-      path: `${base_route}/contact`,
-      end: false,
-    },
-  ],
+const base_route = "/analytic-portfolio";
+const mobile_icon_size = 20;
 
+const navigation_db = {
+  base_route: base_route,
   home: {
     name: "Home",
-    path: `/${base_route}/`,
+    path: `${base_route}/`,
+    icon: <FaHome size={mobile_icon_size} />,
+    end: true,
   },
   about: {
     name: "About",
-    path: `/${base_route}/about`,
-  },
-  portfolio: {
-    name: "Projects",
-    path: `/${base_route}/portfolio`,
-  },
-  dashboard: {
-    name: "Project",
-    path: `/${base_route}/project/:cat/:slug/:id`,
+    path: `${base_route}/about`,
+    icon: null,
+    end: false,
   },
   service: {
     name: "Services",
-    path: `/${base_route}/services`,
+    path: `${base_route}/services`,
+    icon: null,
+    end: false,
   },
   contact: {
     name: "Contact",
-    path: `/${base_route}/contact`,
-  },
-};
-
-const mobile_icon_size = 20;
-export const mobile_navigation_db = {
-  base_route: base_route,
-  nav_links: [
-    {
-      name: "Projects",
-      path: `${base_route}/portfolio`,
-      icon: <FaBriefcase size={mobile_icon_size} />,
-      end: false,
-    },
-    {
-      name: "Home",
-      path: `${base_route}/`,
-      icon: <FaHome size={mobile_icon_size} />,
-      end: true,
-    },
-    {
-      name: "Contact",
-      path: `${base_route}/contact`,
-      icon: <FaEnvelope size={mobile_icon_size} />,
-      end: false,
-    },
-  ],
-
-  home: {
-    name: "Home",
-    path: `/${base_route}/`,
+    path: `${base_route}/contact`,
+    icon: <FaEnvelope size={mobile_icon_size} />,
+    end: false,
   },
   portfolio: {
-    name: "Portfolio",
-    path: `/${base_route}/portfolio`,
+    name: "Projects",
+    path: `${base_route}/portfolio`,
+    icon: <FaBriefcase size={mobile_icon_size} />,
+    end: false,
   },
-  contact: {
-    name: "Contact",
-    path: `/${base_route}/contact`,
+  project: {
+    name: "Project",
+    path: `${base_route}/project/:cat/:slug/:id`,
+    icon: null,
+    end: false,
   },
 };
+
+export default navigation_db;

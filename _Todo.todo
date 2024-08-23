@@ -1,0 +1,46 @@
+
+Minor Changes: 
+    ✔ Rendering defualt @DefaultContext @done(24-08-23 06:44)
+        ✔ Render from context @done(24-08-23 06:44)
+        ✔ Rename @done(24-08-23 06:44)
+
+    ✔ Work on navigations in other js instead of the context @NavigationContextProvider @done(24-08-23 09:00)
+        ✔ Make the navigation once and extract the nav links for the nav bar @done(24-08-23 09:00)
+
+    ✔ Work on pages @done(24-08-23 09:01)
+
+    ☐ Rename of tabs and categories @ProjectContextProvider
+
+    ☐ Render project content from profile context instead of from _db @ProfileContextProvider
+        ☐ @Home
+        ☐ @ContactCard
+
+
+    ☐ Work on bread crumb click on project the category should be "all" @BreadCrumb
+
+    ☐ Work on Mobile responsive
+
+    ☐ Create a favicon
+
+    ☐ Check if any console warning
+
+Hosting:
+    ☐ Rehost using github pages @high
+    ☐ Host on vercel @high
+
+@low Other Fix:
+    ☐ Remove contact form , replace with contacts @Psc-react-version
+
+
+
+
+
+
+
+
+
+
+
+
+
+
