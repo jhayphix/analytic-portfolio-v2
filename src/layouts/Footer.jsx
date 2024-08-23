@@ -13,17 +13,13 @@
 */
 
 const Footer = () => {
-  /*
-  |----------------------------------------
-  | Comment here
-  |----------------------------------------
-  */
+  const currentYear = new Date().getFullYear(); // Get the current year
 
   return (
     <section id="footer_section" className="bg_primary_2 py-5">
       <div className="container-lg mb-sm-0 mb-5">
         <div className="text-center">
-          Copyright 2023 &copy;
+          Copyright {currentYear} &copy;
           <a
             href="https://github.com/jhayphix"
             target="_blank"
@@ -41,3 +37,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

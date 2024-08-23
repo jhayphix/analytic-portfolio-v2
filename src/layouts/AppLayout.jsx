@@ -63,7 +63,6 @@ const AppLayout = ({ children }) => {
       data-theme={theme}
     >
       <Navigation />
-      {/* App content will be injected here */}
       {children}
       {showBackToTop && <BackToTopButton />}
       {showChatOnWhatsapp && <ChatOnWhatsappButton />}

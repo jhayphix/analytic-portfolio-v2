@@ -9,7 +9,7 @@ import { NavigationContext } from "@contexts/NavigationContextProvider";
 // ... Components
 
 // ... Assets
-import { fetchPosts, fetchProjectCategories } from "@src/config.js";
+import { fetchPosts, fetchProjectCategories } from "@src/fetch.js";
 
 export const ProjectContext = createContext({
   activeTab: "",

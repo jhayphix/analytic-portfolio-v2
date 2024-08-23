@@ -36,8 +36,7 @@ const DefaultContextProvider = ({ children }) => {
   | Context
   |----------------------------------------
   */
-  const context = {def_dashboard_img_1, def_dashboard_img_2};
-
+  const context = { def_dashboard_img_1, def_dashboard_img_2 };
   /*
   |----------------------------------------
   | Return jsx
