@@ -22,18 +22,19 @@ const ProjectStoryTab = ({ story_tab, setCategory }) => {
     setActiveProjectStoryTab,
   } = useContext(ProjectContext);
 
-  const handleTabClick = (index, category) => {
+  const handleProjectStoryTabClick = (index, category) => {
     setActiveProjectStoryIndex(index);
     setCategory(category);
   };
 
-  const tabs = story_tab;
+  const project_story_tab_names = story_tab;
 
-  const first_project_story_tab_name = tabs?.[0]?.toLowerCase();
+  const first_project_story_tab_name =
+    project_story_tab_names?.[0]?.toLowerCase();
 
   useEffect(() => {
-    setActiveProjectStoryTab(first_project_story_tab_name)
-  }, [setActiveProjectStoryTab, first_project_story_tab_name])
+    setActiveProjectStoryTab(first_project_story_tab_name);
+  }, [setActiveProjectStoryTab, first_project_story_tab_name]);
 
   /*
   |----------------------------------------
@@ -43,9 +44,9 @@ const ProjectStoryTab = ({ story_tab, setCategory }) => {
   return (
     <div className="mb-3" key={active_project_story_index}>
       <NavTab
-        activeTab={active_project_story_index}
-        tabs={tabs}
-        handleTabClick={handleTabClick}
+        activeTabIndex={active_project_story_index}
+        tab_names={project_story_tab_names}
+        handleTabClick={handleProjectStoryTabClick}
       />
     </div>
   );

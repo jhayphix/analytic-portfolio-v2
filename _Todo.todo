@@ -14,6 +14,7 @@ Minor Changes:
     ☐ Render project content from profile context instead of from _db @ProfileContextProvider
         ☐ @Home
         ☐ @ContactCard
+        ☐ Rename @DashboardStoryTab to @DashboardAndStoryTab
 
 
     ☐ Work on bread crumb click on project the category should be "all" @BreadCrumb

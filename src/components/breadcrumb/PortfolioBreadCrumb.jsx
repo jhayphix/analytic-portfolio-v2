@@ -21,6 +21,7 @@ const PortfolioBreadCrumb = ({ project_category, project_name }) => {
 
   const home_path = home?.path || "";
   const portfolio_path = portfolio?.path || "";
+
   /*
   |----------------------------------------
   | Return
@@ -38,7 +39,12 @@ const PortfolioBreadCrumb = ({ project_category, project_name }) => {
             <Link to={home_path}>Home</Link>
           </li>
           <li className="breadcrumb-item">
-            <Link to={portfolio_path}>Projects</Link>
+            <Link
+              to={portfolio_path}
+              onClick={() => changeProjectCategory("all")}
+            >
+              Projects
+            </Link>
           </li>
           <li className="breadcrumb-item active">
             <Link

@@ -7,7 +7,7 @@ import { ProjectContext } from "@contexts/ProjectContextProvider.jsx";
 
 // ... Components
 import PortfolioBreadCrumb from "@components/breadcrumb/PortfolioBreadCrumb";
-import DashboardStoryTab from "@components/tabs/DashboardStoryTab";
+import DashboardAndStoryTab from "@components/tabs/DashboardAndStoryTab";
 import PageBannerSection from "@components/banners/PageBannerSection";
 import DefaultSpinner from "@components/spinners/DefaultSpinner";
 
@@ -53,7 +53,7 @@ const ProjectDetailsPage = () => {
         project_name={project_title}
       />
 
-      <DashboardStoryTab />
+      <DashboardAndStoryTab />
 
       {project_is_loading ? (
         <DefaultSpinner />

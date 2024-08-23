@@ -15,7 +15,17 @@ import NavTab from "@components/tabs/NavTab";
   |----------------------------------------------------------------------------
 */
 const ProjectNavTab = () => {
-  const { activeTab, projectTabs, handleTabClick } = useContext(ProjectContext);
+  const {
+    active_project_tab_index,
+    projectTabs,
+    setProjectTabIndex,
+    setActiveProjectTabName,
+  } = useContext(ProjectContext);
+
+  const handleProjectTabClick = (index, category) => {
+    setProjectTabIndex(index);
+    setActiveProjectTabName(category);
+  };
 
   /*
   |----------------------------------------
@@ -24,9 +34,9 @@ const ProjectNavTab = () => {
   */
   return (
     <NavTab
-      activeTab={activeTab}
-      tabs={projectTabs}
-      handleTabClick={handleTabClick}
+      activeTabIndex={active_project_tab_index}
+      tab_names={projectTabs}
+      handleTabClick={handleProjectTabClick}
     />
   );
 };

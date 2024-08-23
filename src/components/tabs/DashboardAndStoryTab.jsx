@@ -14,12 +14,17 @@ import NavTab from "@components/tabs/NavTab";
   |----------------------------------------------------------------------------
   |----------------------------------------------------------------------------
 */
-const DashboardStoryTab = () => {
-  const { dashboard_story_tabs, setActiveDashboardStoryTab, active_dashboard_story_index, setActiveDashboardStoryIndex } = useContext(ProjectContext);
+const DashboardAndStoryTab = () => {
+  const {
+    dashboard_and_story_tab,
+    setActiveDashboardAndStoryTab,
+    active_dashboard_story_index,
+    setActiveDashboardAndStoryIndex,
+  } = useContext(ProjectContext);
 
-  const handleTabClick = (tab_index, tab_name) => {
-    setActiveDashboardStoryIndex(tab_index);
-    setActiveDashboardStoryTab(tab_name);
+  const handleDashboardAndStoryTabClick = (tab_index, tab_name) => {
+    setActiveDashboardAndStoryIndex(tab_index);
+    setActiveDashboardAndStoryTab(tab_name);
   };
   /*
   |----------------------------------------
@@ -29,12 +34,12 @@ const DashboardStoryTab = () => {
   return (
     <div className="mb-lg-4 my-3">
       <NavTab
-        activeTab={active_dashboard_story_index}
-        tabs={dashboard_story_tabs}
-        handleTabClick={handleTabClick}
+        activeTabIndex={active_dashboard_story_index}
+        tab_names={dashboard_and_story_tab}
+        handleTabClick={handleDashboardAndStoryTabClick}
       />
     </div>
   );
 };
 
-export default DashboardStoryTab;
+export default DashboardAndStoryTab;

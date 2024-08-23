@@ -16,12 +16,12 @@ import { NavigationContext } from "@contexts/NavigationContextProvider";
 import { fetchPosts, fetchProjectCategories } from "@src/fetch.js";
 
 export const ProjectContext = createContext({
-  activeTab: "",
-  setActiveTab: () => {},
+  active_project_tab_index: "",
+  setProjectTabIndex: () => {},
   active_dashboard_story_tab: "",
-  setActiveDashboardStoryTab: () => {},
+  setActiveDashboardAndStoryTab: () => {},
   active_dashboard_story_index: "",
-  setActiveDashboardStoryIndex: () => {},
+  setActiveDashboardAndStoryIndex: () => {},
   active_project_story_tab: "",
   setActiveProjectStoryTab: () => {},
   active_project_story_index: "",
@@ -29,12 +29,11 @@ export const ProjectContext = createContext({
   active_project: "",
   setActiveProject: () => {},
 
-  category: "",
-  setCategory: () => {},
+  active_project_tab_name: "",
+  setActiveProjectTabName: () => {},
   changeProjectCategory: () => {},
 
   projectTabs: [],
-  handleTabClick: () => {},
   projects: [],
   filteredProjects: [],
 
@@ -65,20 +64,20 @@ const ProjectContextProvider = ({ children }) => {
   */
   // Base config
   const navigate = useNavigate();
-  const dashboard_story_tabs = ["Dashboard", "Story"];
+  const dashboard_and_story_tab = ["Dashboard", "Story"];
 
   // Set states
   const [active_project, setActiveProject] = useState({});
-  const [activeTab, setActiveTab] = useState(0);
-  const [active_dashboard_story_index, setActiveDashboardStoryIndex] =
+  const [active_project_tab_index, setProjectTabIndex] = useState(0);
+  const [active_dashboard_story_index, setActiveDashboardAndStoryIndex] =
     useState(1);
-  const [active_dashboard_story_tab, setActiveDashboardStoryTab] =
+  const [active_dashboard_story_tab, setActiveDashboardAndStoryTab] =
     useState("story");
   const [active_project_story_tab, setActiveProjectStoryTab] =
     useState("introduction");
   const [active_project_story_index, setActiveProjectStoryIndex] = useState(0);
 
-  const [category, setCategory] = useState("all");
+  const [active_project_tab_name, setActiveProjectTabName] = useState("all");
   const [posts, setPosts] = useState([]);
   const [project_is_loading, setProjectIsLoading] = useState(true);
   const [projectTabs, setProjectTabs] = useState(["All"]);
@@ -120,11 +119,13 @@ const ProjectContextProvider = ({ children }) => {
   // Filter projects base on selected category or tab clicked
   const projects = posts;
   const filteredProjects =
-    category === "all"
+    active_project_tab_name === "all"
       ? projects
       : projects?.filter((project) =>
           project?.categories?.some(
-            (cat) => cat?.title?.toLowerCase() === category?.toLowerCase()
+            (cat) =>
+              cat?.title?.toLowerCase() ===
+              active_project_tab_name?.toLowerCase()
           )
         );
 
@@ -176,20 +177,17 @@ const ProjectContextProvider = ({ children }) => {
   |----------------------------------------
   */
   // Get the tab which is clicked's index and category
-  const handleTabClick = (index, category) => {
-    setActiveTab(index);
-    setCategory(category);
-  };
+  
 
   // Change selected project category (eg. Excel) when different tab is clicked
-  const changeProjectCategory = (category) => {
-    const project_category = category?.toLowerCase();
-    setCategory(project_category);
+  const changeProjectCategory = (active_project_tab_name) => {
+    const project_category = active_project_tab_name?.toLowerCase();
+    setActiveProjectTabName(project_category);
 
     projectTabs?.forEach((tab) => {
       if (tab?.toLowerCase() === project_category) {
         const index = projectTabs?.indexOf(tab);
-        setActiveTab(index);
+        setProjectTabIndex(index);
       }
     });
   };
@@ -200,12 +198,12 @@ const ProjectContextProvider = ({ children }) => {
   |----------------------------------------
   */
   const context = {
-    activeTab,
-    setActiveTab,
+    active_project_tab_index,
+    setProjectTabIndex,
     active_dashboard_story_tab,
-    setActiveDashboardStoryTab,
+    setActiveDashboardAndStoryTab,
     active_dashboard_story_index,
-    setActiveDashboardStoryIndex,
+    setActiveDashboardAndStoryIndex,
     active_project_story_tab,
     setActiveProjectStoryTab,
     active_project_story_index,
@@ -213,14 +211,13 @@ const ProjectContextProvider = ({ children }) => {
     active_project,
     setActiveProject,
 
-    category,
-    setCategory,
+    active_project_tab_name,
+    setActiveProjectTabName,
     changeProjectCategory,
-    dashboard_story_tabs,
+    dashboard_and_story_tab,
     filteredProjects,
 
     generateShortId,
-    handleTabClick,
     handleProjectClick,
     navigate,
 

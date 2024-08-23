@@ -11,8 +11,7 @@
   |----------------------------------------------------------------------------
   |----------------------------------------------------------------------------
 */
-const NavTab = ({ activeTab, tabs, handleTabClick }) => {
-
+const NavTab = ({ activeTabIndex, tab_names, handleTabClick }) => {
   /*
   |----------------------------------------
   | Return
@@ -21,11 +20,11 @@ const NavTab = ({ activeTab, tabs, handleTabClick }) => {
   return (
     <div className="nav_tab_container d-flex justify-content-center align-items-center">
       <div className="nav_tab bg_primary_5 py-1 d-flex justify-content-center align-items-center">
-        {tabs?.map((tab, index) => (
+        {tab_names?.map((tab, index) => (
           <div
             key={index}
             className={`tab_item px-3 my-lg-0 my-1 ${
-              activeTab === index ? "tab_active" : ""
+              activeTabIndex === index ? "tab_active" : ""
             }`}
             onClick={() => handleTabClick(index, tab.toLowerCase())}
           >
