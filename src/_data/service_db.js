@@ -5,7 +5,7 @@ import serviceIcon4 from "@assets/images/icons/service_icon_4.svg";
 import serviceIcon5 from "@assets/images/icons/service_icon_5.svg";
 import serviceIcon6 from "@assets/images/icons/service_icon_6.svg";
 
-const service_db = [
+const serviceData = [
   {
     id: 1,
     icon: serviceIcon1,
@@ -44,4 +44,4 @@ const service_db = [
   },
 ];
 
-export default service_db;
+export default serviceData;
