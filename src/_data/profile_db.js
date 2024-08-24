@@ -3,7 +3,6 @@ import {
   FaTwitter,
   FaGithub,
   FaFacebook,
-  FaWrench,
   FaUser,
   FaIdBadge,
   FaMapMarkerAlt,

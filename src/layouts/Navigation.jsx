@@ -2,11 +2,12 @@
 import { NavLink, Link } from "react-router-dom";
 import { useContext, useState, useEffect } from "react";
 // import { BsMoonFill, BsSun } from "react-icons/bs";
-import { FaWrench, FaBars } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
 
 // ... Context
 import { ThemeContext } from "@contexts/ThemeContextProvider";
 import { NavigationContext } from "@contexts/NavigationContextProvider";
+import BrandName from "@layouts/BrandName.jsx";
 
 // ... Components
 import ThemeSwitch from "./ThemeSwitch";
@@ -74,11 +75,7 @@ const Navigation = () => {
       <div className="navbar_container container-lg">
         {/* Section 1: Logo and Brand Name */}
         <Link className="navbar-brand fw-bold text_secondary_1" to={home_path}>
-          <span className="brand_name_highlight"> &#123; Jhay</span>Ph
-          <span className="brand_name_highlight">
-            <FaWrench className="brand_wrench" />
-          </span>
-          x <span className="brand_name_highlight"> &#125; </span>
+          <BrandName />
         </Link>
 
         {/* ------------------------------------------------------------------------ */}

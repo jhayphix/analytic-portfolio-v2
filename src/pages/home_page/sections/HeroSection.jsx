@@ -2,10 +2,6 @@
 // import { Link } from "react-router-dom";
 // import { useContext } from "react";
 import {
-  FaWhatsapp,
-  FaTwitter,
-  FaGithub,
-  FaFacebook,
   FaWrench,
 } from "react-icons/fa";
 // import { FaWrench, FaHandPaper, FaPencilAlt } from "react-icons/fa";

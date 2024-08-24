@@ -6,7 +6,7 @@
 import PageBannerSection from "@components/banners/PageBannerSection";
 import ServiceSection from "@pages/home_page/sections/ServiceSection";
 import StatSection from "@pages/home_page/sections/StatSection";
-import ContactSection from "@pages/home_page/sections/ContactSection";
+// import ContactSection from "@pages/home_page/sections/ContactSection";
 
 // ... Assets
 
@@ -26,7 +26,7 @@ const ServicePage = () => {
       <PageBannerSection pageName="Services" />
       <ServiceSection showHeader={false} />
       <StatSection />
-      <ContactSection />
+      {/* <ContactSection /> */}
     </>
   );
 };

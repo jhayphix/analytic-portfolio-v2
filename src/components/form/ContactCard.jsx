@@ -1,12 +1,12 @@
 // ... React modules
 import { useContext } from "react";
-import { FaWrench } from "react-icons/fa";
 
 // ... Context
 import { ProfileContext } from "@contexts/ProfileContextProvider";
 
 // ... Components
 import SocialIcons from "@components/icons/SocialIcons";
+import BrandName from "@layouts/BrandName.jsx";
 
 // ... Assets
 
@@ -33,11 +33,7 @@ const ContactCard = () => {
         {/* Card Header */}
         <div className="card-header bg_primary_4 text-center">
           <h3 className="fw-bold text_secondary_1">
-            <span className="brand_name_highlight"> &#123; Jhay</span>Ph
-            <span className="brand_name_highlight">
-              <FaWrench className="brand_wrench" />
-            </span>
-            x <span className="brand_name_highlight"> &#125; </span>
+            <BrandName />
           </h3>
         </div>
 

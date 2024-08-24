@@ -3,9 +3,9 @@ Minor Changes:
 
     Render project content from profile context instead of from _db :
 
-        ☐ Work on @profile_db.js
-            ☐ Serve it in context
-            ☐ Check if reference, then return it from context
+        ✔ Work on @profile_db.js @done(24-08-24 02:03)
+            ✔ Serve it in context @done(24-08-24 02:03)
+            ✔ Check if reference, then return it from context @done(24-08-24 02:03)
 
         ☐ Work on @sevice_db.js
             ☐ Serve it in context
@@ -48,6 +48,8 @@ Future Fix:
         ☐ Use form spray
     Reference other websites:
         ☐ @https://overwatch-coder.vercel.app/
+        ☐ Add more to about
+        ☐ Add more to services
 
 Archive:
   ✔ Rendering defualt @DefaultContext @done(24-08-23 06:44) @project(Minor Changes)
