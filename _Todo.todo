@@ -1,32 +1,18 @@
 
 Minor Changes: 
 
+    Work on icons:
+        ☐ Add other icons
+
+    Work on contact form:
+            ☐ Remove contact form
+    
     Render project content from profile context instead of from _db :
-
-        ✔ Work on @profile_db.js @done(24-08-24 02:03)
-            ✔ Serve it in context @done(24-08-24 02:03)
-            ✔ Check if reference, then return it from context @done(24-08-24 02:03)
-
-        ☐ Work on @sevice_db.js
-            ☐ Serve it in context
-            ☐ Check if reference, then return it from context
-
-        ☐ Work on @stat_db.js
-            ☐ Serve it in context
-            ☐ Check if reference, then return it from context
-
-        ☐ A Component for brand name
 
         ☐ Render the skills like that of @https://overwatch-coder.vercel.app/
         
-        ☐ @ContactCard
-
     Work on sections and their colors:
         ☐ Background color of sections should be rendered from context
-    
-    Configure Quokka Extension:
-        ☐ Read on it
-        ☐ Configure
 
     Work on theme:
         ☐ Theme base on system
@@ -38,20 +24,28 @@ Minor Changes:
         ☐ Use it on website
 
 Hosting:
-
     Host on vercel :
         ☐ Create vercel account
         ☐ Create a project
 
 Future Fix: 
-    Work on contact form:
-        ☐ Use form spray
-    Reference other websites:
-        ☐ @https://overwatch-coder.vercel.app/
+    Reference other websites @https://overwatch-coder.vercel.app/:
+        ☐ Resume using latex
         ☐ Add more to about
         ☐ Add more to services
 
 Archive:
+  ✔ Work on @profile_db.js @done(24-08-24 02:03) @project(Minor Changes.Render project content from profile context instead of from _db )
+  ✔ Serve it in context @done(24-08-24 02:03) @project(Minor Changes.Render project content from profile context instead of from _db )
+  ✔ Check if reference, then return it from context @done(24-08-24 02:03) @project(Minor Changes.Render project content from profile context instead of from _db )
+  ✔ Work on @service_db.js @done(24-08-24 02:54) @project(Minor Changes.Render project content from profile context instead of from _db )
+  ✔ Serve it in context @done(24-08-24 02:54) @project(Minor Changes.Render project content from profile context instead of from _db )
+  ✔ Check if reference, then return it from context @done(24-08-24 02:54) @project(Minor Changes.Render project content from profile context instead of from _db )
+  ✔ Work on @stat_db.js @done(24-08-24 02:54) @project(Minor Changes.Render project content from profile context instead of from _db )
+  ✔ Serve it in context @done(24-08-24 02:54) @project(Minor Changes.Render project content from profile context instead of from _db )
+  ✔ Check if reference, then return it from context @done(24-08-24 02:54) @project(Minor Changes.Render project content from profile context instead of from _db )
+  ✔ A Component for brand name @done(24-08-24 02:54) @project(Minor Changes.Render project content from profile context instead of from _db )
+  ✔ @ContactCard @done(24-08-24 03:18) @project(Minor Changes.Render project content from profile context instead of from _db )
   ✔ Rendering defualt @DefaultContext @done(24-08-23 06:44) @project(Minor Changes)
   ✔ Render from context @done(24-08-23 06:44) @project(Minor Changes)
   ✔ Rename @done(24-08-23 06:44) @project(Minor Changes)
