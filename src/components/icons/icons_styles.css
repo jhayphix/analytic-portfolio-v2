@@ -1,0 +1,15 @@
+#social_icons_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+#social_icons_container .social_link .social_icon {
+    font-size: 2rem;
+}
+
+#social_icons_container .social_link:hover .social_icon {
+    color: var(--text_accent_1);
+    color: red;
+}

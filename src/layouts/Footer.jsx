@@ -16,7 +16,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear(); // Get the current year
 
   return (
-    <section id="footer_section" className="bg_primary_2 py-5">
+    <section id="footer_section" className="bg_primary_4 py-5">
       <div className="container-lg mb-sm-0 mb-5">
         <div className="text-center">
           Copyright 2023 - {currentYear} &copy;

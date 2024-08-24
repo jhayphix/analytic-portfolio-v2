@@ -28,6 +28,8 @@ import "@components/buttons/button_star.css";
 import "@components/buttons/button_space.css";
 import "@components/buttons/button_document.css";
 
+import "@components/icons/icons_styles.css";
+
 import "@pages/project_details_page/sections/project_details_section.css";
 import "@pages/project_details_page/sections/story_classes.css";
 

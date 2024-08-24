@@ -120,12 +120,12 @@
   |----------------------------------------
   */
   /* Primary colors */
-  --bg_primary_1: #ffffff;
-  --bg_primary_2: #f2f4fe;
+  --bg_primary_1: #f2f4fe;
+  --bg_primary_2: #dfeafc;
   --bg_primary_3: #f2f4fe;
   --bg_primary_4: #e5eafc;
   --bg_primary_5: #e5eafc;
-  --bg_primary_6: #ffffff;
+  --bg_primary_6: #f9faff;
 
   --bg_box_shadow: rgba(0, 0, 0, 0.2);
 

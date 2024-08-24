@@ -3,11 +3,11 @@ import { useContext } from "react";
 
 // ... Context
 import { DefaultContext } from "@contexts/DefaultContextProvider.jsx";
+import { ProfileContext } from "@contexts/ProfileContextProvider.jsx";
 
 // ... Components
 
 // ... Assets
-import my_profile from "@data/profile_db";
 
 /*
   |----------------------------------------------------------------------------
@@ -15,8 +15,9 @@ import my_profile from "@data/profile_db";
   |----------------------------------------------------------------------------
 */
 
-const AboutProfileSection = () => {
+const AboutContactSection = () => {
   const { portrait_img } = useContext(DefaultContext);
+  const { fullContactDetails } = useContext(ProfileContext);
 
   /*
     |----------------------------------------
@@ -35,16 +36,17 @@ const AboutProfileSection = () => {
             <img
               src={portrait_img}
               className="img-fluid rounded"
-              alt="Jhayphix Ablordeppey Samuel"
+              alt="Jhayphix : Samuel K. Ablordeppey"
               style={{ borderRadius: "50px", height: "100%", width: "100%" }}
             />
           </div>
 
           <div className="col-md-12 col-11">
             <div id="profile_info">
-              {my_profile.map(({ type, text }, index) => {
+              {fullContactDetails.map(({ type, text, icon }, index) => {
                 return (
                   <p key={index} className="mb-2">
+                    {icon}
                     <span className="fw-bold text_secondary_1">{type} : </span>
                     <span className="text_muted_1">{text}</span>
                   </p>
@@ -58,4 +60,4 @@ const AboutProfileSection = () => {
   );
 };
 
-export default AboutProfileSection;
+export default AboutContactSection;

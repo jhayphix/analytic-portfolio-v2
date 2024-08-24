@@ -15,5 +15,17 @@
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  /* border: 1px solid rgba(255, 255, 255, 0.18); */
+  border-top: 1px solid var(--bg_secondary_1);
+  border-left: 1px solid var(--bg_secondary_1);
+}
+
+.glass_morphism_effect {
+  padding: 1rem;
+  background-color: var(--bg_about_card_1);
+  box-shadow: var(--shadow_about_card);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  /* border: 1px solid rgba(255, 255, 255, 0.18); */
 }

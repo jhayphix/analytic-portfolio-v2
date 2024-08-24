@@ -3,9 +3,9 @@
 // ... Context
 
 // ... Components
-import AboutProfileSection from "@pages/home_page/sections/AboutProfileSection";
-import AboutInfoSection from "@pages/home_page/sections/AboutInfoSection";
-import AboutSkillSection from "@pages/home_page/sections/AboutSkillSection";
+import AboutContactSection from "@pages/home_page/sections/AboutContactSection";
+import AboutMeTextSection from "@pages/home_page/sections/AboutMeTextSection";
+import SkillsOverviewSection from "@pages/home_page/sections/SkillsOverviewSection";
 
 // ... Assets
 
@@ -27,13 +27,13 @@ const AboutSection = () => {
         <div className="container-lg">
           <div className="row gap-3 justify-content-center">
             {/* Profile */}
-            <AboutProfileSection />
+            <AboutContactSection />
 
             {/* About info */}
-            <AboutInfoSection />
+            <AboutMeTextSection />
 
             {/* Skills */}
-            <AboutSkillSection />
+            <SkillsOverviewSection />
           </div>
         </div>
       </section>

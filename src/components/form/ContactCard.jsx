@@ -1,18 +1,12 @@
 // ... React modules
-import {
-  FaWhatsapp,
-  FaTwitter,
-  FaGithub,
-  FaFacebook,
-  FaWrench,
-  FaMapMarkerAlt,
-  FaPhone,
-  FaEnvelope,
-} from "react-icons/fa";
+import { useContext } from "react";
+import { FaWrench } from "react-icons/fa";
 
 // ... Context
+import { ProfileContext } from "@contexts/ProfileContextProvider";
 
 // ... Components
+import SocialIcons from "@components/icons/SocialIcons";
 
 // ... Assets
 
@@ -23,6 +17,8 @@ import {
 */
 
 const ContactCard = () => {
+  const { basicContactDetails } = useContext(ProfileContext);
+
   /*
     |----------------------------------------
     | Return
@@ -30,8 +26,12 @@ const ContactCard = () => {
   */
   return (
     <div className="row justify-content-center">
-      <div className="col-10 card rounded-lg p-0 border-0 box-shadow">
-        <div className="card-header bg_primary_3 text-center">
+      <div
+        className="col-10 card rounded-lg p-0 border-0 box-shadow"
+        style={{ backgroundColor: "transparent" }}
+      >
+        {/* Card Header */}
+        <div className="card-header bg_primary_4 text-center">
           <h3 className="fw-bold text_secondary_1">
             <span className="brand_name_highlight"> &#123; Jhay</span>Ph
             <span className="brand_name_highlight">
@@ -41,68 +41,27 @@ const ContactCard = () => {
           </h3>
         </div>
 
-        {/*  */}
-        <div className="card-body py-5 text_secondary_1 bg_primary_4">
-          <h5 className="card-title text_secondary_1 mb-4">
+        {/* <div className="card-body py-5 text_secondary_1 bg_primary_4"> */}
+        <div className="card-body py-5 text_secondary_1">
+          <h5 className="glass_morphism_effect card-title text_secondary_1 mb-4">
             Let's talk about a project
           </h5>
 
-          <div className="card-text text_secondary_1">
-            <div className="text_container">
-              <FaMapMarkerAlt className="me-3" />
-              <span className="">Kumasi - Ghana</span>
-            </div>
-            <div className="text_container">
-              <FaPhone className="me-3" />
-              <span className="">+233 248 359 918</span>
-            </div>
-            <div className="text_container">
-              <FaEnvelope className="me-3" />
-              <span className="">jhayphix05@gmail.com</span>
-            </div>
+          <div className="glass_morphism_effect card-text text_secondary_1">
+            {basicContactDetails.map(({ text, icon }, index) => {
+              return (
+                <div key={index} className="text_container">
+                  {icon}
+                  <span className="">{text}</span>
+                </div>
+              );
+            })}
           </div>
         </div>
 
-        {/*  */}
-        <div className="card-footer bg_primary_2 text-center">
-          <div className="contact_social_icons_container">
-            <a
-              href="https://wa.me/233248359918?text=Hello Jhay, I need your service!!"
-              target="_blank"
-              rel="noreferrer"
-              className="social_link text_whatsapp"
-            >
-              <FaWhatsapp className="social_icon" />
-            </a>
-
-            <a
-              href="https://wa.me/233248359918?text=Hello Jhay, I need your service!!"
-              target="_blank"
-              rel="noreferrer"
-              className="social_link text_twitter"
-            >
-              <FaTwitter className="social_icon" />
-            </a>
-
-            <a
-              href="https://github.com/jhayphix"
-              target="_blank"
-              rel="noreferrer"
-              className="social_link text_secondary_1"
-            >
-              <FaGithub className="social_icon" />
-            </a>
-
-            <a
-              href="https://wa.me/233248359918?text=Hello Jhay, I need your service!!"
-              target="_blank"
-              rel="noreferrer"
-              // className="social_link text_primary_color_1"
-              className="social_link text_facebook"
-            >
-              <FaFacebook className="social_icon" />
-            </a>
-          </div>
+        {/* Card Footer */}
+        <div className="card-footer bg_primary_5 text-center py-4">
+          <SocialIcons />
         </div>
       </div>
     </div>

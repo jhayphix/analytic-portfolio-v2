@@ -1,36 +1,28 @@
 
 Minor Changes: 
-    ✔ Rendering defualt @DefaultContext @done(24-08-23 06:44)
-        ✔ Render from context @done(24-08-23 06:44)
-        ✔ Rename @done(24-08-23 06:44)
-
-    ✔ Work on navigations in other js instead of the context @NavigationContextProvider @done(24-08-23 09:00)
-        ✔ Make the navigation once and extract the nav links for the nav bar @done(24-08-23 09:00)
-
-    ✔ Work on pages @done(24-08-23 09:01)
-
-    ✔ Rename of tabs and categories @ProjectContextProvider: @done(24-08-23 10:36)
-
-
-    ✔ Work on bread crumb click on project the category should be "all" @BreadCrumb: @done(24-08-23 11:00)
-
-    ✔ Work on Mobile responsive: @done(24-08-23 11:00)
 
     Render project content from profile context instead of from _db :
-        ✔ Work on @ProfileContextProvider @started(24-08-23 16:21) @done(24-08-23 16:37) @lasted(16m4s)
-            ✔ Create @ProfileContextProvider @done(24-08-23 16:36)
-            ✔ Add it to @AppContextProvider @done(24-08-23 16:36)
+
         ☐ Work on @profile_db.js
             ☐ Serve it in context
             ☐ Check if reference, then return it from context
+
         ☐ Work on @sevice_db.js
             ☐ Serve it in context
             ☐ Check if reference, then return it from context
+
         ☐ Work on @stat_db.js
             ☐ Serve it in context
             ☐ Check if reference, then return it from context
+
+        ☐ A Component for brand name
+
+        ☐ Render the skills like that of @https://overwatch-coder.vercel.app/
+        
         ☐ @ContactCard
-        ✔ Rename @DashboardStoryTab to @DashboardAndStoryTab @done(24-08-23 16:13)
+
+    Work on sections and their colors:
+        ☐ Background color of sections should be rendered from context
     
     Configure Quokka Extension:
         ☐ Read on it
@@ -45,11 +37,11 @@ Minor Changes:
         ☐ Create favicon
         ☐ Use it on website
 
-    Check if any console warning:
-
 Hosting:
-    Rehost using github pages @high:
-    Host on vercel @high:
+
+    Host on vercel :
+        ☐ Create vercel account
+        ☐ Create a project
 
 Future Fix: 
     Work on contact form:
@@ -57,16 +49,17 @@ Future Fix:
     Reference other websites:
         ☐ @https://overwatch-coder.vercel.app/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+Archive:
+  ✔ Rendering defualt @DefaultContext @done(24-08-23 06:44) @project(Minor Changes)
+  ✔ Render from context @done(24-08-23 06:44) @project(Minor Changes)
+  ✔ Rename @done(24-08-23 06:44) @project(Minor Changes)
+  ✔ Work on navigations in other js instead of the context @NavigationContextProvider @done(24-08-23 09:00) @project(Minor Changes)
+  ✔ Make the navigation once and extract the nav links for the nav bar @done(24-08-23 09:00) @project(Minor Changes)
+  ✔ Work on pages @done(24-08-23 09:01) @project(Minor Changes)
+  ✔ Rename of tabs and categories @ProjectContextProvider: @done(24-08-23 10:36) @project(Minor Changes)
+  ✔ Work on bread crumb click on project the category should be "all" @BreadCrumb: @done(24-08-23 11:00) @project(Minor Changes)
+  ✔ Work on Mobile responsive: @done(24-08-23 11:00) @project(Minor Changes)
+  ✔ Work on @ProfileContextProvider @started(24-08-23 16:21) @done(24-08-23 16:37) @lasted(16m4s) @project(Minor Changes.Render project content from profile context instead of from _db )
+  ✔ Create @ProfileContextProvider @done(24-08-23 16:36) @project(Minor Changes.Render project content from profile context instead of from _db )
+  ✔ Add it to @AppContextProvider @done(24-08-23 16:36) @project(Minor Changes.Render project content from profile context instead of from _db )
+  ✔ Rename @DashboardStoryTab to @DashboardAndStoryTab @done(24-08-23 16:13) @project(Minor Changes.Render project content from profile context instead of from _db )
