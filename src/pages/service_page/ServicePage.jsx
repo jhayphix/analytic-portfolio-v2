@@ -1,12 +1,13 @@
 // ... React modules
+import { useContext } from "react";
 
 // ... Context
+import { DefaultContext } from "@contexts/DefaultContextProvider.jsx";
+import PageTransition from "@layouts/PageTransition";
 
 // ... Components
 import PageBannerSection from "@components/banners/PageBannerSection";
 import ServiceSection from "@pages/home_page/sections/ServiceSection";
-// import ProjectStatSection from "@pages/home_page/sections/ProjectStatSection";
-// import ContactSection from "@pages/home_page/sections/ContactSection";
 
 // ... Assets
 
@@ -16,6 +17,7 @@ import ServiceSection from "@pages/home_page/sections/ServiceSection";
 |----------------------------------------------------------------------------
 */
 const ServicePage = () => {
+  const { service_page_effect } = useContext(DefaultContext);
   /*
   |----------------------------------------
   | Comment here
@@ -23,10 +25,10 @@ const ServicePage = () => {
   */
   return (
     <>
-      <PageBannerSection pageName="Services" />
-      <ServiceSection showHeader={false} />
-      {/* <ProjectStatSection /> */}
-      {/* <ContactSection /> */}
+      <PageTransition effect={service_page_effect}>
+        <PageBannerSection pageName="Services" />
+        <ServiceSection showHeader={false} />
+      </PageTransition>
     </>
   );
 };

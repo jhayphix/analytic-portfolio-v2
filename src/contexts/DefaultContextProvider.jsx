@@ -35,6 +35,17 @@ const DefaultContextProvider = ({ children }) => {
   const hand_hold_feather = handHoldFeather;
   const portrait_img = PortraitImg;
 
+  /* Effects of motion 
+  top | bottom | left | right | fade | flip | scale | rotate | slide-fade
+  */
+  const transition_duration = 0.6;
+  const home_page_effect = "bottom";
+  const about_page_effect = "flip";
+  const contact_page_effect = "left";
+  const service_page_effect = "right";
+  const portfolio_page_effect = "bottom";
+  const project_details_page_effect = "flip";
+
   /*
   |----------------------------------------
   | Context
@@ -46,6 +57,14 @@ const DefaultContextProvider = ({ children }) => {
     def_project_img_3,
     hand_hold_feather,
     portrait_img,
+
+    transition_duration,
+    home_page_effect,
+    about_page_effect,
+    contact_page_effect,
+    service_page_effect,
+    portfolio_page_effect,
+    project_details_page_effect,
   };
   /*
   |----------------------------------------

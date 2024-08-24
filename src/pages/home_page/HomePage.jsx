@@ -1,6 +1,10 @@
 // ... React modules
+import { useContext } from "react";
 
 // ... Context
+import { DefaultContext } from "@contexts/DefaultContextProvider.jsx";
+
+import PageTransition from "@layouts/PageTransition";
 
 // ... Components
 import HeroSection from "@pages/home_page/sections/HeroSection";
@@ -18,20 +22,23 @@ import ContactSection from "@pages/home_page/sections/ContactSection";
 |----------------------------------------------------------------------------
 */
 const HomePage = () => {
+  const { home_page_effect } = useContext(DefaultContext);
   /*
   |----------------------------------------
   | Comment here
   |----------------------------------------
   */
   return (
-    <main>
-      <HeroSection />
-      <AboutSection />
-      <PortfolioSection />
-      <ServiceSection />
-      <ProjectStatSection />
-      <ContactSection />
-    </main>
+    <PageTransition effect={home_page_effect}>
+      <main>
+        <HeroSection />
+        <AboutSection />
+        <PortfolioSection />
+        <ServiceSection />
+        <ProjectStatSection />
+        <ContactSection />
+      </main>
+    </PageTransition>
   );
 };
 

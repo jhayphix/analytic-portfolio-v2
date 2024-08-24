@@ -1,6 +1,9 @@
 // ... React modules
+import { useContext } from "react";
 
 // ... Context
+import { DefaultContext } from "@contexts/DefaultContextProvider.jsx";
+import PageTransition from "@layouts/PageTransition";
 
 // ... Components
 import PageBannerSection from "@components/banners/PageBannerSection";
@@ -15,17 +18,20 @@ import PortfolioSection from "@pages/home_page/sections/PortfolioSection";
 |----------------------------------------------------------------------------
 */
 const PortfolioPage = () => {
+  const { portfolio_page_effect } = useContext(DefaultContext);
   /*
   |----------------------------------------
   | Comment here
   |----------------------------------------
   */
   return (
-    <section>
-      <PageBannerSection pageName="Portfolio" />
-      <PortfolioSection showHeader={false} />
-      <ProjectStatSection />
-    </section>
+    <PageTransition effect={portfolio_page_effect}>
+      <section>
+        <PageBannerSection pageName="Portfolio" />
+        <PortfolioSection showHeader={false} />
+        <ProjectStatSection />
+      </section>
+    </PageTransition>
   );
 };
 

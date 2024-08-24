@@ -1,18 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+import { useContext } from "react";
+import { DefaultContext } from "@contexts/DefaultContextProvider.jsx";
+const { transition_duration } = useContext(DefaultContext);

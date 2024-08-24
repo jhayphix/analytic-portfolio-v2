@@ -1,6 +1,7 @@
 // ... React modules
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { useContext } from "react";
+import { AnimatePresence } from "framer-motion";
 
 // ... Context
 import { NavigationContext } from "@contexts/NavigationContextProvider";
@@ -21,6 +22,7 @@ import ServicePage from "@pages/service_page/ServicePage";
 |----------------------------------------------------------------------------
 */
 const WebRouting = () => {
+  const location = useLocation();
   /*
   |----------------------------------------
   | Comment here
@@ -30,28 +32,30 @@ const WebRouting = () => {
     useContext(NavigationContext);
 
   return (
-    <Routes>
-      {/* Homepage */}
-      <Route path={home?.path} element={<HomePage />} />
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        {/* Homepage */}
+        <Route path={home?.path} element={<HomePage />} />
 
-      {/* About page */}
-      <Route path={about?.path} element={<AboutPage />} />
+        {/* About page */}
+        <Route path={about?.path} element={<AboutPage />} />
 
-      {/* Portfolio page */}
-      <Route path={portfolio?.path} element={<PortfolioPage />} />
+        {/* Portfolio page */}
+        <Route path={portfolio?.path} element={<PortfolioPage />} />
 
-      {/* Services page */}
-      <Route path={service?.path} element={<ServicePage />} />
+        {/* Services page */}
+        <Route path={service?.path} element={<ServicePage />} />
 
-      {/* Contact page */}
-      <Route path={contact?.path} element={<ContactPage />} />
+        {/* Contact page */}
+        <Route path={contact?.path} element={<ContactPage />} />
 
-      {/* Dashboard page */}
-      <Route path={dashboard?.path} element={<ProjectDetailsPage />} />
+        {/* Dashboard page */}
+        <Route path={dashboard?.path} element={<ProjectDetailsPage />} />
 
-      {/* Not found */}
-      <Route path="*" element="Not Found" />
-    </Routes>
+        {/* Not found */}
+        <Route path="*" element="Not Found" />
+      </Routes>
+    </AnimatePresence>
   );
 };
 

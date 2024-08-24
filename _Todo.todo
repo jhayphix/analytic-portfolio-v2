@@ -1,17 +1,19 @@
 
 Minor Changes: 
 
-    Work on icons:
-        ☐ Add other icons
+    ✔ Work on icons: @done(24-08-24 04:38)
+        ✔ Add other icons @done(24-08-24 04:38)
 
     Work on contact form:
         ☐ Remove contact form
     
-    Render text from down effect:
-    
-    Render project content from profile context instead of from _db :
+    ✔ Render text from down effect: @done(24-08-24 06:36)
 
-        ☐ Render the skills like that of @https://overwatch-coder.vercel.app/
+    ✔ Render project content from profile context instead of from _db : @done(24-08-24 06:36)
+
+    ☐ Handle tab click in url
+
+    ☐ Render the skills like that of @https://overwatch-coder.vercel.app/
         
     Work on sections and their colors:
         ☐ Background color of sections should be rendered from context
