@@ -43,7 +43,7 @@ const navigation_db = {
   },
   project: {
     name: "Project",
-    path: `${base_route}/project/:cat/:slug/:id`,
+    path: `${base_route}/p/:cat/:slug-:id`,
     icon: null,
     end: false,
   },

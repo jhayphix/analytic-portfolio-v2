@@ -52,7 +52,7 @@ const NavigationContextProvider = ({ children }) => {
   |----------------------------------------
   */
   const projectDetailsURL = (category, slug, id) => {
-    const path = `${base_route}/project/${category}/${slug}/${id}`;
+    const path = `${base_route}/p/${category}/${slug}-${id}?tab=Introduction`;
     return path;
   };
 

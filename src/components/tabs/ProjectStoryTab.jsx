@@ -14,17 +14,14 @@ import NavTab from "@components/tabs/NavTab";
   |----------------------------------------------------------------------------
   |----------------------------------------------------------------------------
 */
-const ProjectStoryTab = ({ story_tab, setCategory }) => {
+const ProjectStoryTab = ({ story_tab, handleTabSearchParams }) => {
   // Context
-  const {
-    active_project_story_index,
-    setActiveProjectStoryIndex,
-    setActiveProjectStoryTab,
-  } = useContext(ProjectContext);
+  const { active_project_story_index, setActiveProjectStoryIndex } =
+    useContext(ProjectContext);
 
   const handleProjectStoryTabClick = (index, category) => {
     setActiveProjectStoryIndex(index);
-    setCategory(category);
+    handleTabSearchParams(category);
   };
 
   const project_story_tab_names = story_tab;
@@ -32,9 +29,7 @@ const ProjectStoryTab = ({ story_tab, setCategory }) => {
   const first_project_story_tab_name =
     project_story_tab_names?.[0]?.toLowerCase();
 
-  useEffect(() => {
-    setActiveProjectStoryTab(first_project_story_tab_name);
-  }, [setActiveProjectStoryTab, first_project_story_tab_name]);
+  useEffect(() => {}, [first_project_story_tab_name]);
 
   /*
   |----------------------------------------
@@ -47,6 +42,7 @@ const ProjectStoryTab = ({ story_tab, setCategory }) => {
         activeTabIndex={active_project_story_index}
         tab_names={project_story_tab_names}
         handleTabClick={handleProjectStoryTabClick}
+        onTabChange={true}
       />
     </div>
   );

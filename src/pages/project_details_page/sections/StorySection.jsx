@@ -1,5 +1,6 @@
 // ... React modules
 import React, { useContext } from "react";
+import { useSearchParams } from "react-router-dom";
 
 // ... Components
 import { ProjectContext } from "@contexts/ProjectContextProvider.jsx";
@@ -24,8 +25,15 @@ const renderMarks = (marks) => {
 
 const StorySection = () => {
   // Contents
-  const { active_project, active_project_story_tab, setActiveProjectStoryTab } =
+  const { active_project } =
     useContext(ProjectContext);
+
+  const [searchParams, setSearchParams] = useSearchParams();
+  const storyTabParamsName = searchParams.get("tab") || "tab1";
+
+  const handleTabSearchParams = (tab_name) => {
+    setSearchParams({ tab: tab_name });
+  };
 
   // Project Variables
   const project_stories = active_project?.stories;
@@ -33,8 +41,7 @@ const StorySection = () => {
 
   // Get the active project story
   const filtered_story = project_stories?.find(
-    (story) =>
-      story?.tab?.toLowerCase() === active_project_story_tab?.toLowerCase()
+    (story) => story?.tab?.toLowerCase() === storyTabParamsName?.toLowerCase()
   );
 
   // Get the content of the story
@@ -44,10 +51,12 @@ const StorySection = () => {
     <div className="__story_section">
       <ProjectStoryTab
         story_tab={all_story_tabs}
-        setCategory={setActiveProjectStoryTab}
+        handleTabSearchParams={handleTabSearchParams}
       />
 
-      <div className="__story_section_container py-5">
+      <div
+        className="__story_section_container py-5"
+      >
         <div className="__story_container">
           {filtered_story_content.length > 0 ? (
             filtered_story_content.map((story, index) => {

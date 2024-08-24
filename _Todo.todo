@@ -1,25 +1,10 @@
 
 Minor Changes: 
-
-    ✔ Work on icons: @done(24-08-24 04:38)
-        ✔ Add other icons @done(24-08-24 04:38)
-
-    Work on contact form:
-        ☐ Remove contact form
     
-    ✔ Render text from down effect: @done(24-08-24 06:36)
-
-    ✔ Render project content from profile context instead of from _db : @done(24-08-24 06:36)
-
-    ☐ Handle tab click in url
-
-    ☐ Render the skills like that of @https://overwatch-coder.vercel.app/
-        
     Work on sections and their colors:
         ☐ Background color of sections should be rendered from context
-
-    Work on theme:
-        ☐ Theme base on system
+        
+    Render the skills like that of @https://overwatch-coder.vercel.app/ :
     
     Create a Logo:
         ☐ Create a logo
@@ -37,8 +22,19 @@ Future Fix:
         ☐ Resume using latex
         ☐ Add more to about
         ☐ Add more to services
+    
+    Handle tab click in url :
+        ☐ Define the route/url for the story tab
+        ☐ Add the route to when the tab is clicked
+        ☐ Get the search parameters
 
 Archive:
+  ✔ Work on icons: @done(24-08-24 04:38) @project(Minor Changes)
+  ✔ Add other icons @done(24-08-24 04:38) @project(Minor Changes)
+  ✔ Work on contact form: @done(24-08-24 07:08) @project(Minor Changes)
+  ✔ Remove contact form @done(24-08-24 07:08) @project(Minor Changes)
+  ✔ Render text from down effect: @done(24-08-24 06:36) @project(Minor Changes)
+  ✔ Render project content from profile context instead of from _db : @done(24-08-24 06:36) @project(Minor Changes)
   ✔ Work on @profile_db.js @done(24-08-24 02:03) @project(Minor Changes.Render project content from profile context instead of from _db )
   ✔ Serve it in context @done(24-08-24 02:03) @project(Minor Changes.Render project content from profile context instead of from _db )
   ✔ Check if reference, then return it from context @done(24-08-24 02:03) @project(Minor Changes.Render project content from profile context instead of from _db )

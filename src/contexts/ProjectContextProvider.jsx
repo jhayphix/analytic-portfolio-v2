@@ -22,8 +22,6 @@ export const ProjectContext = createContext({
   setActiveDashboardAndStoryTab: () => {},
   active_dashboard_story_index: "",
   setActiveDashboardAndStoryIndex: () => {},
-  active_project_story_tab: "",
-  setActiveProjectStoryTab: () => {},
   active_project_story_index: "",
   setActiveProjectStoryIndex: () => {},
   active_project: "",
@@ -74,8 +72,6 @@ const ProjectContextProvider = ({ children }) => {
     useState(1);
   const [active_dashboard_story_tab, setActiveDashboardAndStoryTab] =
     useState("story");
-  const [active_project_story_tab, setActiveProjectStoryTab] =
-    useState("introduction");
   const [active_project_story_index, setActiveProjectStoryIndex] = useState(0);
 
   const [active_project_tab_name, setActiveProjectTabName] = useState("all");
@@ -204,8 +200,6 @@ const ProjectContextProvider = ({ children }) => {
     setActiveDashboardAndStoryTab,
     active_dashboard_story_index,
     setActiveDashboardAndStoryIndex,
-    active_project_story_tab,
-    setActiveProjectStoryTab,
     active_project_story_index,
     setActiveProjectStoryIndex,
     active_project,
