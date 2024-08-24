@@ -70,7 +70,7 @@ const ProfileContextProvider = ({ children }) => {
     contact_phone,
   ];
 
-  const basicContactDetails = [contact_location, contact_email, contact_phone];
+  const basicContactDetails = [contact_location, contact_phone, contact_email];
 
   /*
   |----------------------------------------
