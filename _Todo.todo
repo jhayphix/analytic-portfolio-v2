@@ -5,7 +5,9 @@ Minor Changes:
         ☐ Add other icons
 
     Work on contact form:
-            ☐ Remove contact form
+        ☐ Remove contact form
+    
+    Render text from down effect:
     
     Render project content from profile context instead of from _db :
 
@@ -16,7 +18,7 @@ Minor Changes:
 
     Work on theme:
         ☐ Theme base on system
-
+    
     Create a Logo:
         ☐ Create a logo
         ☐ Learn how to use it on website

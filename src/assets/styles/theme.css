@@ -112,27 +112,10 @@
   | Other Background
   |----------------------------------------
 */
-.bg_whatsapp {
-  background-color: var(--whatsapp_color);
-}
-.bg_twitter {
-  background-color: var(--twitter_color);
-}
-.bg_facebook {
-  background-color: var(--facebook_color);
-}
+
 
 /*
   |----------------------------------------
   | Other Text
   |----------------------------------------
 */
-.text_whatsapp {
-  color: var(--whatsapp_color);
-}
-.text_twitter {
-  color: var(--twitter_color);
-}
-.text_facebook {
-  color: var(--facebook_color);
-}

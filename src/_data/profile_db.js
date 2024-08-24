@@ -1,8 +1,9 @@
 import {
   FaWhatsapp,
-  FaTwitter,
+  // FaTwitter,
   FaGithub,
-  FaFacebook,
+  // FaFacebook,
+  FaLinkedin,
   FaUser,
   FaIdBadge,
   FaMapMarkerAlt,
@@ -50,14 +51,6 @@ export const contactSocialIconsData = [
     icon: <FaWhatsapp className="social_icon" />,
   },
   {
-    name: "twitter",
-    title: "Twitter",
-    url: "https://wa.me/233248359918?text=Hello Jhay, I need your service!!",
-    target: "_blank",
-    style: "text_twitter",
-    icon: <FaTwitter className="social_icon" />,
-  },
-  {
     name: "github",
     title: "Github",
     url: "https://github.com/jhayphix",
@@ -66,12 +59,20 @@ export const contactSocialIconsData = [
     icon: <FaGithub className="social_icon" />,
   },
   {
-    name: "facebook",
-    title: "Facebook",
-    url: "https://wa.me/233248359918?text=Hello Jhay, I need your service!!",
+    name: "linkedin",
+    title: "LinkedIn",
+    url: "https://www.linkedin.com/in/samuel-k-ablordeppey-8b98bb251/",
     target: "_blank",
-    style: "text_facebook",
-    icon: <FaFacebook className="social_icon" />,
+    style: "text_linkedin",
+    icon: <FaLinkedin className="social_icon" />,
+  },
+  {
+    name: "mail",
+    title: "Mail",
+    url: "mailto:jhayphix05@gmail.com?subject=Contact%20Request&body=Hello%20Jhay,%0A%0AI%20am%20reaching%20out%20to%20you%20because%20I%20am%20interested%20in%20your%20services.%0A%0AThank%20you!",
+    target: "_blank",
+    style: "text_mail",
+    icon: <FaEnvelope className="social_icon" />,
   },
 ];
 
