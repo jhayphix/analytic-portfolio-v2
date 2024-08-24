@@ -5,7 +5,7 @@
 // ... Components
 import AboutSection from "@pages/home_page/sections/AboutSection";
 import ServiceSection from "@pages/home_page/sections/ServiceSection";
-import StatSection from "@pages/home_page/sections/StatSection";
+import ProjectStatSection from "@pages/home_page/sections/ProjectStatSection";
 import PageBannerSection from "@components/banners/PageBannerSection";
 
 // ... Assets
@@ -25,7 +25,7 @@ const AboutPage = () => {
     <>
       <PageBannerSection pageName="About Me" />
       <AboutSection />
-      <StatSection />
+      <ProjectStatSection />
       <ServiceSection showHeader={true} />
     </>
   );

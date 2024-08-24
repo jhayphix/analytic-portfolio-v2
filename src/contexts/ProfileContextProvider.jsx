@@ -1,6 +1,7 @@
 // Refrence to this context
+// import { useContext } from "react";
 // import { ProfileContext } from "@contexts/ProfileContextProvider.jsx";
-// const { fullServiceData } = useContext(ProfileContext);
+// const { projectStats } = useContext(ProfileContext);
 
 // ... React modules
 import { createContext } from "react";
@@ -15,6 +16,7 @@ import { aboutMeContentData } from "@data/profile_db.js";
 import { skillsRatingsData } from "@data/profile_db.js";
 import { contactSocialIconsData } from "@data/profile_db.js";
 import serviceData from "@data/service_db";
+import projectStatData from "@data/project_stat_db";
 
 // Register variables
 export const ProfileContext = createContext({
@@ -35,6 +37,7 @@ export const ProfileContext = createContext({
   fullContactSocialIcons: [],
 
   fullServiceData: [],
+  projectStats: [],
 });
 /*
   |----------------------------------------------------------------------------
@@ -103,11 +106,11 @@ const ProfileContextProvider = ({ children }) => {
 
   /*
   |----------------------------------------
-  | Service
+  | Service and Performance
   |----------------------------------------
   */
-
   const fullServiceData = serviceData;
+  const projectStats = projectStatData;
 
   /*
   |----------------------------------------
@@ -131,6 +134,7 @@ const ProfileContextProvider = ({ children }) => {
 
     fullContactSocialIcons,
     fullServiceData,
+    projectStats,
   };
   /*
   |----------------------------------------

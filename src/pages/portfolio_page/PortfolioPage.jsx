@@ -4,7 +4,7 @@
 
 // ... Components
 import PageBannerSection from "@components/banners/PageBannerSection";
-import StatSection from "@pages/home_page/sections/StatSection";
+import ProjectStatSection from "@pages/home_page/sections/ProjectStatSection";
 import PortfolioSection from "@pages/home_page/sections/PortfolioSection";
 
 // ... Assets
@@ -24,7 +24,7 @@ const PortfolioPage = () => {
     <section>
       <PageBannerSection pageName="Portfolio" />
       <PortfolioSection showHeader={false} />
-      <StatSection />
+      <ProjectStatSection />
     </section>
   );
 };
