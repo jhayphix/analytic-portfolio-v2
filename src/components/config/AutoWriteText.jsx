@@ -35,7 +35,7 @@ const AutoWriteText = () => {
       }
     }
 
-    const interval = setInterval(autoWriteFunc, 300);
+    const interval = setInterval(autoWriteFunc, 200);
 
     return () => {
       clearInterval(interval);

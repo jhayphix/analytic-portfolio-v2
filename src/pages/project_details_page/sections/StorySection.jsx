@@ -1,62 +1,70 @@
-// ... React modules
-import React, { useContext } from "react";
+// React modules
+import { useContext, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 
-// ... Components
+// Context import
 import { ProjectContext } from "@contexts/ProjectContextProvider.jsx";
-import ProjectStoryTab from "@components/tabs/ProjectStoryTab";
 
-// ... Rich Content
+// Component imports
 import BlockContent from "@components/rich_content/BlockContent";
 import ImageContent from "@components/rich_content/ImageContent";
 import LinkContent from "@components/rich_content/LinkContent";
+import ProjectStoryTab from "@components/tabs/ProjectStoryTab";
 
-// Display the marks as classes
+// Function to render text marks with specific classes
 const renderMarks = (marks) => {
   const markClasses = {
     strong: "__text_strong",
     em: "__text_italic",
     underline: "__text_underline",
-    highlight: "__text_highlight", // Add additional classes if needed
+    highlight: "__text_highlight",
   };
 
   return marks?.map((mark) => markClasses[mark] || "").join(" ");
 };
 
 const StorySection = () => {
-  // Contents
-  const { active_project } =
-    useContext(ProjectContext);
+  // Access the active project from the ProjectContext
+  const { active_project } = useContext(ProjectContext);
 
+  // Extract project stories and their tabs
+  const project_stories = active_project?.stories;
+  const all_story_tabs = project_stories?.map((item) => item?.tab);
+  const first_story_tab_name = all_story_tabs?.[0];
+
+  // Handle search parameters for story tabs
   const [searchParams, setSearchParams] = useSearchParams();
   const storyTabParamsName = searchParams.get("tab") || "tab1";
 
+  useEffect(() => {
+    // Set the search parameter to the first story's tab name on initial render
+    setSearchParams({ tab: first_story_tab_name });
+
+    // eslint-disable-next-line
+  }, []);
+
+  // Update search parameters when a tab is clicked
   const handleTabSearchParams = (tab_name) => {
     setSearchParams({ tab: tab_name });
   };
 
-  // Project Variables
-  const project_stories = active_project?.stories;
-  const all_story_tabs = project_stories?.map((item) => item?.tab);
-
-  // Get the active project story
+  // Find the currently active story based on the search parameter
   const filtered_story = project_stories?.find(
     (story) => story?.tab?.toLowerCase() === storyTabParamsName?.toLowerCase()
   );
 
-  // Get the content of the story
+  // Extract the content of the active story
   const filtered_story_content = filtered_story?.content || [];
 
   return (
     <div className="__story_section">
+      {/* Render story tabs */}
       <ProjectStoryTab
         story_tab={all_story_tabs}
         handleTabSearchParams={handleTabSearchParams}
       />
 
-      <div
-        className="__story_section_container py-5"
-      >
+      <div className="__story_section_container py-5">
         <div className="__story_container">
           {filtered_story_content.length > 0 ? (
             filtered_story_content.map((story, index) => {
@@ -77,10 +85,10 @@ const StorySection = () => {
                 case "block":
                   return (
                     <>
-                      {/* All the markdefs what has link */}
+                      {/* Render content with link marks */}
                       {markDefs?.map((item) => item?._type).includes("link") &&
                       children ? (
-                        <div key={index}>
+                        <div key={`block-link-${index}`}>
                           <LinkContent
                             index={index}
                             style={style}
@@ -90,7 +98,7 @@ const StorySection = () => {
                           />
                         </div>
                       ) : (
-                        <div key={index}>
+                        <div key={`block-${index}`}>
                           <BlockContent
                             index={index}
                             style={style}
@@ -105,7 +113,7 @@ const StorySection = () => {
 
                 case "image":
                   return (
-                    <div key={asset?._key}>
+                    <div key={`image-${asset?._key || index}`}>
                       <ImageContent
                         index={index}
                         asset={asset}
