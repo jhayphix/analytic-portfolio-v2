@@ -2,10 +2,10 @@
 Local Changes: 
     Create a Logo:
         ✔ Create a logo @started(24-08-30 10:54) @done(24-08-30 10:56) @lasted(2m36s)
-        ☐ Use favicon on website @started(24-08-30 10:56)
-            ☐ Convert jpg to png
-            ☐ Create favicon
-            ☐ Use it on website
+        ✔ Use favicon on website @started(24-08-30 12:04) @done(24-08-30 12:44) @lasted(40m28s)
+            ✔ Convert jpg to png @done(24-08-30 12:44)
+            ✔ Create favicon @done(24-08-30 12:44)
+            ✔ Use it on website @done(24-08-30 12:44)
 
 Hosting:
     Host on vercel :
