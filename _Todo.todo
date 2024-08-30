@@ -1,19 +1,11 @@
 
 Local Changes: 
-    Search about extension:
-        ☐ Quokka extension
-        ☐ Console ninja extension
-
-    Work on sections and their colors:
-        ☐ Background color of sections should be rendered from context
-        
-    Render the skills like that of @https://overwatch-coder.vercel.app/ :
-    
     Create a Logo:
-        ☐ Create a logo
-        ☐ Learn how to use it on website
-        ☐ Create favicon
-        ☐ Use it on website
+        ✔ Create a logo @started(24-08-30 10:54) @done(24-08-30 10:56) @lasted(2m36s)
+        ☐ Use favicon on website @started(24-08-30 10:56)
+            ☐ Convert jpg to png
+            ☐ Create favicon
+            ☐ Use it on website
 
 Hosting:
     Host on vercel :
@@ -32,6 +24,11 @@ Future Fix:
         ☐ Get the search parameters
 
 Archive:
+  ✘ Search about extension: @cancelled(24-08-25 17:31) @project(Local Changes)
+  ✘ Quokka extension @started(24-08-25 01:28) @cancelled(24-08-25 02:22) @wasted(54m2s) @project(Local Changes)
+  ✘ Console ninja extension @started(24-08-25 02:22) @cancelled(24-08-25 02:52) @wasted(30m4s) @project(Local Changes)
+  ✔ Search params for project categroy: @done(24-08-25 17:31) @project(Local Changes)
+  ✔ Use search params to get project category @done(24-08-25 17:31) @project(Local Changes)
   ✔ Work on icons: @done(24-08-24 04:38) @project(Minor Changes)
   ✔ Add other icons @done(24-08-24 04:38) @project(Minor Changes)
   ✔ Work on contact form: @done(24-08-24 07:08) @project(Minor Changes)

@@ -1,5 +1,6 @@
 // ... React modules
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 
 // ... Context
 import { ProjectContext } from "@contexts/ProjectContextProvider";
@@ -22,9 +23,23 @@ const ProjectNavTab = () => {
     setActiveProjectTabName,
   } = useContext(ProjectContext);
 
+  const [searchParams, setSearchParams] = useSearchParams();
+  const projectCategoryParams = searchParams.get("category") || "all";
+  const first_project_tab_name = projectTabs?.[0]?.toLowerCase();
+
+  useEffect(() => {
+    // Set the search parameter to the first story's tab name on initial render
+    setSearchParams({ category: first_project_tab_name });
+    // eslint-disable-next-line
+  }, []);
+
+  useEffect(() => {
+    setActiveProjectTabName(projectCategoryParams);
+  }, [projectCategoryParams, setActiveProjectTabName]);
+
   const handleProjectTabClick = (index, category) => {
     setProjectTabIndex(index);
-    setActiveProjectTabName(category);
+    setSearchParams({ category: category });
   };
 
   /*
