@@ -1,14 +1,15 @@
 // ... React modules
-// import { useContext } from "react";
+import { useContext } from "react";
 
 // ... Context
-// import { ProjectContext } from "@contexts/ProjectContextProvider";
+import { ProjectContext } from "@contexts/ProjectContextProvider";
 
 // ... Components
 import SectionHeader from "@components/headers/SectionHeader";
 import PortfolioThread from "@components/cards/PortfolioThread";
 import ProjectNavTab from "@components/tabs/ProjectNavTab";
 import SectionSubText from "@components/headers/SectionSubText";
+import DefaultSpinner from "@components/spinners/DefaultSpinner";
 
 // ... Assets
 
@@ -19,6 +20,7 @@ import SectionSubText from "@components/headers/SectionSubText";
 */
 
 const PortfolioSection = ({ showHeader }) => {
+  const { project_is_loading } = useContext(ProjectContext);
   /*
     |----------------------------------------
     | Return
@@ -37,8 +39,15 @@ const PortfolioSection = ({ showHeader }) => {
         ) : (
           <SectionSubText subText={sectionSubTitle} />
         )}
-        <ProjectNavTab />
-        <PortfolioThread />
+        {project_is_loading ? (
+          <DefaultSpinner />
+        ) : (
+          <>
+            {" "}
+            <ProjectNavTab />
+            <PortfolioThread />{" "}
+          </>
+        )}
       </div>
     </section>
   );
