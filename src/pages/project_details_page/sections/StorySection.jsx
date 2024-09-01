@@ -56,8 +56,6 @@ const StorySection = () => {
   // Extract the content of the active story
   const filtered_story_content = filtered_story?.content || [];
 
-  console.log("Hello");
-
   return (
     <div className="__story_section">
       {/* Render story tabs */}
