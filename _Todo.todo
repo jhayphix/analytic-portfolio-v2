@@ -1,13 +1,12 @@
-
-Local Changes: 
-    Create a Logo:
-        ✔ Create a logo @started(24-08-30 10:54) @done(24-08-30 10:56) @lasted(2m36s)
-        ✔ Use favicon on website @started(24-08-30 12:04) @done(24-08-30 12:44) @lasted(40m28s)
-            ✔ Convert jpg to png @done(24-08-30 12:44)
-            ✔ Create favicon @done(24-08-30 12:44)
-            ✔ Use it on website @done(24-08-30 12:44)
-
 Hosting:
+    Deploy Sanity project:
+        ✔ Learn to deploy sanity project @started(24-09-01 12:11) @done(24-09-01 13:27) @lasted(1h16m3s)
+        ✔ Deploy sanity project @done(24-09-01 13:27)
+        ☐ Deploy to github
+
+    Deploy to github pages:
+        ☐ Deploy to github pages
+
     Host on vercel :
         ☐ Create vercel account
         ☐ Create a project
@@ -24,6 +23,11 @@ Future Fix:
         ☐ Get the search parameters
 
 Archive:
+  ✔ Create a logo @started(24-08-30 10:54) @done(24-08-30 10:56) @lasted(2m36s) @project(Local Changes.Create a Logo)
+  ✔ Use favicon on website @started(24-08-30 12:04) @done(24-08-30 12:44) @lasted(40m28s) @project(Local Changes.Create a Logo)
+  ✔ Convert jpg to png @done(24-08-30 12:44) @project(Local Changes.Create a Logo)
+  ✔ Create favicon @done(24-08-30 12:44) @project(Local Changes.Create a Logo)
+  ✔ Use it on website @done(24-08-30 12:44) @project(Local Changes.Create a Logo)
   ✘ Search about extension: @cancelled(24-08-25 17:31) @project(Local Changes)
   ✘ Quokka extension @started(24-08-25 01:28) @cancelled(24-08-25 02:22) @wasted(54m2s) @project(Local Changes)
   ✘ Console ninja extension @started(24-08-25 02:22) @cancelled(24-08-25 02:52) @wasted(30m4s) @project(Local Changes)
