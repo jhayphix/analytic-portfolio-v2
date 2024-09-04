@@ -79,12 +79,13 @@ const StorySection = () => {
                 markDefs,
                 crop,
                 hotspot,
+                _key,
               } = story;
 
               switch (_type) {
                 case "block":
                   return (
-                    <>
+                    <div key={_key}>
                       {/* Render content with link marks */}
                       {markDefs?.map((item) => item?._type).includes("link") &&
                       children ? (
@@ -108,7 +109,7 @@ const StorySection = () => {
                           />
                         </div>
                       )}
-                    </>
+                    </div>
                   );
 
                 case "image":

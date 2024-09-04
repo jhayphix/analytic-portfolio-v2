@@ -1,13 +1,8 @@
 Hosting:
-    Deploy Sanity project:
-        ✔ Learn to deploy sanity project @started(24-09-01 12:11) @done(24-09-01 13:27) @lasted(1h16m3s)
-        ✔ Deploy sanity project @done(24-09-01 13:27)
-        ☐ Deploy to github
+    Fix project not showing:
+        ☐ Project not showing on github pages
 
-    Deploy to github pages:
-        ☐ Deploy to github pages
-
-    Host on vercel :
+    Host project on vercel :
         ☐ Create vercel account
         ☐ Create a project
 
@@ -23,6 +18,12 @@ Future Fix:
         ☐ Get the search parameters
 
 Archive:
+  ✔ Deploy Sanity project: @done(24-09-01 14:35) @project(Hosting)
+  ✔ Learn to deploy sanity project @started(24-09-01 12:11) @done(24-09-01 13:27) @lasted(1h16m3s) @project(Hosting)
+  ✔ Deploy sanity project @done(24-09-01 13:27) @project(Hosting)
+  ✔ Deploy to github @done(24-09-01 14:19) @project(Hosting)
+  ✔ Deploy to github pages: @done(24-09-01 14:35) @project(Hosting)
+  ✔ Deploy to github pages @done(24-09-01 14:35) @project(Hosting)
   ✔ Create a logo @started(24-08-30 10:54) @done(24-08-30 10:56) @lasted(2m36s) @project(Local Changes.Create a Logo)
   ✔ Use favicon on website @started(24-08-30 12:04) @done(24-08-30 12:44) @lasted(40m28s) @project(Local Changes.Create a Logo)
   ✔ Convert jpg to png @done(24-08-30 12:44) @project(Local Changes.Create a Logo)
