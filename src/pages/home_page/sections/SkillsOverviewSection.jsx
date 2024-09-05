@@ -27,7 +27,7 @@ const SkillsOverviewSection = () => {
     <div className="col-md-10 col-sm-9 col-11">
       <p className="h3 mb-4 mt-5">Skills</p>
       <div className="row skill-mf mb-5">
-        {skillsChunks.map((chunk, chunkIndex) => (
+        {skillsChunks?.map((chunk, chunkIndex) => (
           <div key={chunkIndex} className="col-md-4 col-12 mb-5">
             {chunk.map(({ name, rate }, index) => (
               <div key={index}>

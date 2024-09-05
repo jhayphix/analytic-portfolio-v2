@@ -8,7 +8,6 @@ import { NavigationContext } from "@contexts/NavigationContextProvider";
 
 const MobileNav = () => {
   const { mobile_nav_links } = useContext(NavigationContext);
-  const nav_links_db = mobile_nav_links;
 
   // Scroll to the top function
   const scrollToTop = () => {
@@ -38,7 +37,7 @@ const MobileNav = () => {
           </div>
 
           {/*  */}
-          {nav_links_db.map(({ name, path, icon, end }, index) => {
+          {mobile_nav_links?.map(({ name, path, icon, end }, index) => {
             return (
               <div className="col" key={index}>
                 <NavLink

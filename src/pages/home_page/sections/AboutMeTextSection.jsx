@@ -35,7 +35,7 @@ const AboutMeTextSection = () => {
         </h2>
 
         <div>
-          {aboutMeContent.map(({ text }, index) => {
+          {aboutMeContent?.map(({ text }, index) => {
             return (
               <p className="lead text_secondary_1 mb-3" key={index}>
                 {text}
