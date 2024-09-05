@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { BsArrowUp } from "react-icons/bs";
-import { FaWhatsapp } from "react-icons/fa";
+// import { FaWhatsapp } from "react-icons/fa";
 
 // Context
 import { NavigationContext } from "@contexts/NavigationContextProvider";
@@ -24,7 +24,7 @@ const MobileNav = () => {
     >
       <div className="container-lg">
         <div className="row w-100 text-center">
-          <div className="col">
+          {/* <div className="col">
             <a
               href="https://wa.me/233248359918?text=Hello Jhay, I need your service!!"
               target="_blank"
@@ -34,7 +34,7 @@ const MobileNav = () => {
               <FaWhatsapp size={20} />
               <div className="mobile_nav_name">Whatsapp</div>
             </a>
-          </div>
+          </div> */}
 
           {/*  */}
           {mobile_nav_links?.map(({ name, path, icon, end }, index) => {
