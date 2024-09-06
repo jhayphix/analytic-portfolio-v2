@@ -1,12 +1,8 @@
-Hosting:
-    Fix project not showing:
-        ☐ Project not showing on github pages
-
-    Host project on vercel :
-        ☐ Create vercel account
-        ☐ Create a project
 
 Future Fix: 
+    Fix services:
+        ☐ Render it in the skills page
+        ☐ Work on the badges
     Reference other websites @https://overwatch-coder.vercel.app/:
         ☐ Resume using latex
         ☐ Add more to about
@@ -18,6 +14,13 @@ Future Fix:
         ☐ Get the search parameters
 
 Archive:
+  ✔ Hosting: @done(24-09-05 21:29)
+  ✔ Fix project not showing: @done(24-09-05 21:29)
+  ✔ Project not showing on github pages @done(24-09-05 21:29)
+  ✔ @done(24-09-05 21:29)
+  ✔ Host project on vercel : @done(24-09-05 21:29)
+  ✔ Create vercel account @done(24-09-05 21:29)
+  ✔ Create a project @done(24-09-05 21:29)
   ✔ Deploy Sanity project: @done(24-09-01 14:35) @project(Hosting)
   ✔ Learn to deploy sanity project @started(24-09-01 12:11) @done(24-09-01 13:27) @lasted(1h16m3s) @project(Hosting)
   ✔ Deploy sanity project @done(24-09-01 13:27) @project(Hosting)

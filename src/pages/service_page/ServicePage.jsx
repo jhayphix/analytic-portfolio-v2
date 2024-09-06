@@ -26,7 +26,7 @@ const ServicePage = () => {
   return (
     <>
       <PageTransition effect={service_page_effect}>
-        <PageBannerSection pageName="Services" />
+        <PageBannerSection pageName="SKILLS" />
         <ServiceSection showHeader={false} />
       </PageTransition>
     </>

@@ -24,8 +24,8 @@ const navigation_db = {
     end: false,
   },
   service: {
-    name: "Services",
-    path: `${base_route}/services`,
+    name: "Skills",
+    path: `${base_route}/skills`,
     icon: null,
     end: false,
   },
