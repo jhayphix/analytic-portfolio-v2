@@ -23,7 +23,7 @@ const SkillsOverviewSection = () => {
     |----------------------------------------
   */
   return (
-    <div className="col-md-10 col-sm-9 col-11">
+    <div className="">
       <p className="h3 mb-4 mt-5">SKILLS</p>
 
       {skillsBadgeData?.map((section) => (

@@ -27,7 +27,7 @@ const AboutContactSection = () => {
 
   return (
     <>
-      <div className="col-md-5 col-sm-8 col-12">
+      <div className="">
         <div className="row justify-content-md-start justify-content-center profile">
           <div
             className="col-md-12 mb-5"
