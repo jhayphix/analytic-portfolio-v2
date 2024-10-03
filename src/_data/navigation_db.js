@@ -6,7 +6,7 @@ import { FaHome, FaBriefcase, FaEnvelope } from "react-icons/fa";
   |----------------------------------------
 */
 
-const base_route = "/analytic-portfolio";
+const base_route = "/analytic-portfolio-v2";
 const mobile_icon_size = 20;
 
 const navigation_db = {
